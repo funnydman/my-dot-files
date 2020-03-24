@@ -50,7 +50,7 @@ bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 5 && $refresh_i3s
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 5 && $refresh_i3status
 
 # custom things 
-exec_always --no-startup-id feh --bg-scale $HOME/.config/themes/background.png
+exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpapers/arch.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 
 exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
@@ -87,7 +87,7 @@ bindsym $mod+x mode "exit: [l]ogout, [r]eboot, [s]hutdown"
 # testing
 #bindsym $mod+u exec ~/.config/i3/scripts/dunst.sh
 exec_always --no-startup-id dunst
-exec_always --no-startup-id picom # for shadows stuff and etc
+exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf # for shadows stuff and etc
 
 # change focus
 bindsym $mod+h focus left
