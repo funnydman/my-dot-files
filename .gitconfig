@@ -1,0 +1,4 @@
+[alias]
+    last = log -1 HEAD
+    plog = log --oneline --decorate --all --graph
+    st = status

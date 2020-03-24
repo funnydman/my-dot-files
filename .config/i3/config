@@ -1,15 +1,9 @@
-# Based on Distro Tube config 
-# Should you change your keyboard layout some time, delete
-# this file and re-run i3-config-wizard(1).
+#Many thanks to DistroTube guy 
 
 set $mod Mod4
 
-
-# set default desktop layout (default is tiling)
-# workspace_layout tabbed <stacking|tabbed>
-
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 1
+new_window pixel 2 
 new_float normal
 
 # Hide borders
@@ -26,14 +20,6 @@ font xft:URWGothic-Book 11
 
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
-
-
-# This font is widely installed, provides lots of unicode glyphs, right-to-left
-# text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 10
-
-# The combination of xss-lock, nm-applet and pactl is a popular choice, so
-# they are included here as an example. Modify as you see fit.
 
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
