@@ -25,7 +25,9 @@ set incsearch
 
 " adds fancy colors, for eyes
 syntax on
-colorscheme dracula 
+" colorscheme dracula
+
+
 set nu
 set ruler
 set autoread " watch for file changres
@@ -49,9 +51,15 @@ au FileType asm setlocal ft=nasm
 " enable all Python syntax highlighting features
 
 
-" disable arrows usage
+" Disable arrows usage
 noremap <silent> <Up> <Nop>
 noremap <silent> <Down> <Nop>
 noremap <silent> <Left> <Nop>
 noremap <silent> <Right> <Nop>
+
+" Disable arrow keys in Insert mode
+ino <Up> <Nop>
+ino <Down> <Nop>
+ino <Left> <Nop>
+ino <Right> <Nop>
 

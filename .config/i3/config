@@ -227,7 +227,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Lock screen
-bindsym Control+l exec --no-startup-id i3lock-fancy
+bindsym $mod+escape exec --no-startup-id i3lock-fancy
 
 #############################
 ### settings for i3-gaps: ###
@@ -292,3 +292,4 @@ mode "$mode_gaps_outer" {
 
 # auto start application
 exec_always --no-startup-id $HOME/.config/xidlelock.sh 
+
