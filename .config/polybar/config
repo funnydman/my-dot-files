@@ -171,7 +171,8 @@ fuzzy-match = false
 ;       v     
 
 ws-icon-0 = 1;
-ws-icon-1 = 2;
+ws-icon-1 = 2;
+;ws-icon-1 = 2;
 ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
@@ -863,14 +864,6 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
 ramp-volume-4 = 
-
-
-
-
-
-
-
-
 
 
 # vim:ft=dosini   
