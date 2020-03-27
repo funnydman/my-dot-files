@@ -12,6 +12,7 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'tpope/vim-fugitive'
 Plugin 'dracula/vim', {'name': 'dracula'}
 Plugin 'tpope/vim-surround'
+Plugin 'mboughaba/i3config.vim'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required

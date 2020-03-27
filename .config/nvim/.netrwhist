@@ -1,6 +1,12 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
-let g:netrw_dirhist_4='/home/dzmitry/polybar-themes/polybar-6'
-let g:netrw_dirhist_3='/home/dzmitry/.config/i3'
-let g:netrw_dirhist_2='/home/dzmitry/.config/polybar/scripts'
-let g:netrw_dirhist_1='/home/dzmitry/.config/polybar/fonts'
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/etc/netctl'
+let g:netrw_dirhist_5='/etc/netctl/examples'
+let g:netrw_dirhist_4='/etc/netctl'
+let g:netrw_dirhist_3='/home/dzmitry/sandbox/voidrice/.config/i3'
+let g:netrw_dirhist_2='/home/dzmitry/sandbox/voidrice/.config'
+let g:netrw_dirhist_1='/home/dzmitry/sandbox/voidrice'
+let g:netrw_dirhist_0='/etc/X11/xorg.conf.d'
+let g:netrw_dirhist_9='/etc/X11'
+let g:netrw_dirhist_8='/etc/X11/xorg.conf.d'
+let g:netrw_dirhist_7='/usr/share/X11/xorg.conf.d'

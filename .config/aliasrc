@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # Use neovim for vim if present.
-command -v nvim >/dev/null && alias vim="nvim" vimdiff="nvim -d"
+command -v nvim >/dev/null && alias vim="nvim" vi="nvim" vimdiff="nvim -d"
 
 # Verbosity and settings that you pretty much just always are going to want.
 alias \
@@ -26,7 +26,6 @@ alias \
 alias vimconf='nvim ~/.config/nvim/init.vim'
 alias vimi3='nvim ~/.config/i3/config'
 alias config='/usr/bin/git --git-dir=/home/dzmitry/.cfg/ --work-tree=/home/dzmitry'
-
 
 alias py3=python3
 # low-level stuff and C related
@@ -121,11 +120,11 @@ alias ...='cd ../../'
 alias ....='cd ../../../'
 
 # django stuff
-alias prun="python manage.py runserver 0.0.0.0:8000"
+alias prun="python manage.py runserver 0.0.0.0:8080"
 alias psu="python manage.py createsuperuser"
 alias pmig="python manage.py migrate"
 alias pmake="python manage.py makemigrations"
-alias pshell='python manage.py shell_plus --print-sql'
+alias pshell='python manage.py shell -i ipython'
 alias ptest='python manage.py test'
 alias pipi='pip install -r requirements.txt'
 alias svenv='source venv/bin/activate'

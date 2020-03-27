@@ -1,7 +1,8 @@
-#Many thanks to DistroTube guy 
+# vim: filetype=i3config
+# Many thanks to DistroTube guy 
 
 set $mod Mod4
-
+#force_xinerama yes
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 2 
 new_float normal
@@ -28,7 +29,7 @@ exec --no-startup-id nm-applet
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status 
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
@@ -36,9 +37,11 @@ bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 5 && $refresh_i3s
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 5 && $refresh_i3status
 
 # custom things 
-exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpapers/arch.jpg
+exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpapers/wall.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id guake 
+exec --no-startup-id guake 
+#exec --no-startup-id skype
+
 
 exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
 exec --no-startup-id setxkbmap -option caps:escape
@@ -61,7 +64,7 @@ bindsym Shift+Print exec flameshot full -c -p ~/Pictures/
 mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
   bindsym l exec i3-msg exit
   bindsym r exec systemctl reboot
-  bindsym s exec systemctl shutdown
+  bindsym s exec systemctl shutdown now
   bindsym Escape mode "default"
   bindsym Return mode "default"
 }
@@ -180,12 +183,12 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 
 # Open applications on specific workspaces
 assign [class="Firefox"] $ws1
-assign [class="pycharm-professional"] $ws2
+assign [class="jetbrains-pycharm"] $ws2
 
 for_window [title="Skype"] floating enable border pixel 1
 for_window [title="Telegram"] floating enable border pixel 1
 for_window [title="KeePass"] floating enable border pixel 1
-
+# for_window [title=".*\s(.*)" class="jetbrains-pycharm"] fullscreen enable 
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -290,4 +293,7 @@ mode "$mode_gaps_outer" {
 
 # auto start application
 exec_always --no-startup-id $HOME/.config/xidlelock.sh 
-
+# Moving workspaces between screens 
+bindsym $mod+p move workspace to output right
+# https://i3wm.org/docs/user-contributed/swapping-workspaces.html
+bindsym $mod+Shift+s exec $HOME/.config/i3/scripts/i3-display-swap.sh
