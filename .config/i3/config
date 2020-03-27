@@ -40,7 +40,8 @@ bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 5 && $refresh_i
 exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpapers/wall.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id guake 
-#exec --no-startup-id skype
+
+exec --no-startup-id skype
 
 
 exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
@@ -197,6 +198,7 @@ for_window [urgent=latest] focus
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
+
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -B 'Yes, exit i3' 'i3-msg exit'"
 
@@ -297,3 +299,4 @@ exec_always --no-startup-id $HOME/.config/xidlelock.sh
 bindsym $mod+p move workspace to output right
 # https://i3wm.org/docs/user-contributed/swapping-workspaces.html
 bindsym $mod+Shift+s exec $HOME/.config/i3/scripts/i3-display-swap.sh
+bindsym $mod + XF86Tools exec wifi-menu; notify-send "Key is pressed"
