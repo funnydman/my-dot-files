@@ -45,8 +45,8 @@ exec --no-startup-id skype
 exec --no-startup-id dropbox
 
 
-exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
-exec --no-startup-id setxkbmap -option caps:escape
+exec_always --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
+exec_always --no-startup-id setxkbmap -option caps:escape
 
 # start a terminal
 bindsym $mod+Return exec st
@@ -69,7 +69,7 @@ bindsym Shift+Print exec flameshot full -c -p ~/Pictures/
 mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
   bindsym l exec i3-msg exit
   bindsym r exec systemctl reboot
-  bindsym s exec systemctl shutdown now
+  bindsym s exec shutdown now
   bindsym Escape mode "default"
   bindsym Return mode "default"
 }
@@ -79,7 +79,7 @@ bindsym $mod+x mode "exit: [l]ogout, [r]eboot, [s]hutdown"
 # testing
 #bindsym $mod+u exec ~/.config/i3/scripts/dunst.sh
 exec_always --no-startup-id dunst
-exec_always --no-startup-id picom --config $HOME/.config/picom/picom.conf # for shadows stuff and etc
+exec --no-startup-id picom --config $HOME/.config/picom/picom.conf # for shadows stuff and etc
 
 # change focus
 bindsym $mod+h focus left
@@ -200,11 +200,13 @@ bindsym $mod+Shift+0 move container to workspace number $ws10
 assign [class="Firefox"] $ws1
 assign [class="jetbrains-pycharm"] $ws2
 
+for_window [class="Lxappearance"] floating enable border pixel 1
 for_window [title="Skype"] floating enable border pixel 1
 for_window [title="Telegram"] floating enable border pixel 1
 for_window [title="KeePass"] floating enable border pixel 1
 # for_window [title=".*\s(.*)" class="jetbrains-pycharm"] fullscreen enable
-
+# Making IntelliJ IDEA loading window float nicely in the center.
+for_window [class="jetbrains-pycharm" title="win0"] floating enable;
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
