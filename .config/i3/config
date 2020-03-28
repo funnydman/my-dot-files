@@ -1,10 +1,10 @@
 # vim: filetype=i3config
-# Many thanks to DistroTube guy 
+# Many thanks to DistroTube guy
 
 set $mod Mod4
 #force_xinerama yes
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
-new_window pixel 2 
+new_window pixel 2
 new_float normal
 
 # Hide borders
@@ -29,17 +29,17 @@ exec --no-startup-id nm-applet
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% && $refresh_i3status
-bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status 
+bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5% && $refresh_i3status
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle && $refresh_i3status
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle && $refresh_i3status
 
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 5 && $refresh_i3status
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 5 && $refresh_i3status
 
-# custom things 
+# custom things
 exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpapers/wall.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec --no-startup-id guake 
+exec --no-startup-id guake
 
 exec --no-startup-id skype
 exec --no-startup-id dropbox
@@ -185,6 +185,16 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws10
 
+# Theme colors
+# class                   border  backgr. text    indic.   child_border
+  client.focused          #556064 #556064 #80FFF9 #FDF6E3
+  client.focused_inactive #2F3D44 #2F3D44 #AD69AF #454948
+  client.unfocused        #2F3D44 #2F3D44 #AD69AF #454948
+  client.urgent           #CB4B16 #FDF6E3 #AD69AF #268BD2
+  client.placeholder      #000000 #0c0c0c #ffffff #000000
+
+  client.background       #2B2C2B
+
 
 # Open applications on specific workspaces
 assign [class="Firefox"] $ws1
@@ -193,7 +203,7 @@ assign [class="jetbrains-pycharm"] $ws2
 for_window [title="Skype"] floating enable border pixel 1
 for_window [title="Telegram"] floating enable border pixel 1
 for_window [title="KeePass"] floating enable border pixel 1
-# for_window [title=".*\s(.*)" class="jetbrains-pycharm"] fullscreen enable 
+# for_window [title=".*\s(.*)" class="jetbrains-pycharm"] fullscreen enable
 
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
@@ -252,14 +262,14 @@ gaps outer -4
 # Smart gaps (gaps used if only more than one container on the workspace)
 smart_gaps on
 
-# Smart borders (draw borders around container only if it is not the only container on this workspace) 
+# Smart borders (draw borders around container only if it is not the only container on this workspace)
 # on|no_gaps (on=always activate and no_gaps=only activate if the gap size to the edge of the screen is 0)
 smart_borders on
 
-# Press $mod+Shift+g to enter the gap mode. 
+# Press $mod+Shift+g to enter the gap mode.
 # Choose o or i for modifying outer/inner gaps.
-# Press one of + / - (in-/decrement for current workspace) 
-# or 0 (remove gaps for current workspace). If you also press Shift 
+# Press one of + / - (in-/decrement for current workspace)
+# or 0 (remove gaps for current workspace). If you also press Shift
 # with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
 set $mode_gaps_outer Outer Gaps: +|-|0 (local), Shift + +|-|0 (global)
@@ -298,13 +308,13 @@ mode "$mode_gaps_outer" {
 }
 
 # auto start application
-exec_always --no-startup-id $HOME/.config/xidlelock.sh 
-# Moving workspaces between screens 
+exec_always --no-startup-id $HOME/.config/xidlelock.sh
+# Moving workspaces between screens
 bindsym $mod+p move workspace to output right
 # https://i3wm.org/docs/user-contributed/swapping-workspaces.html
 bindsym $mod+Shift+s exec $HOME/.config/i3/scripts/i3-display-swap.sh
 bindsym $mod + XF86Tools exec sudo -n /usr/bin/wifi-menu; exec notify-send "Key is pressed"
 
-# just for testing 
+# just for testing
 bindsym $mod + Shift + u exec $HOME/.config/i3/scripts/dunst.sh
 

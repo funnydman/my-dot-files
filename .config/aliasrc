@@ -115,6 +115,19 @@ alias pssh=__add_permanently_ssh_key
 alias netap='sudo netstat -ap'
 alias myip="curl http://ipecho.net/plain; echo"
 
+# keepass
+
+__get_entry_name() {
+    if [[ -n "$1" ]]; then
+        keepassxc-cli clip ~/Dropbox/KP2A/actual.kdbx $1
+    else
+        echo "Specify entry name"
+    fi
+}
+
+
+alias kcc=__get_entry_name
+
 # changing directories
 alias ..='cd ..'
 alias ...='cd ../../'
