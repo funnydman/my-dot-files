@@ -42,6 +42,7 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec --no-startup-id guake 
 
 exec --no-startup-id skype
+exec --no-startup-id dropbox
 
 
 exec --no-startup-id setxkbmap us,ru -option 'grp:alt_shift_toggle'
@@ -55,6 +56,9 @@ bindsym $mod+Shift+q kill
 
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show run -theme solarized_alternate
+
+bindsym $mod+F1 exec --no-startup-id notify-send "testin"
+
 
 exec --no-startup-id flameshot
 bindsym Print exec "flameshot gui"
@@ -195,7 +199,7 @@ for_window [title="KeePass"] floating enable border pixel 1
 for_window [urgent=latest] focus
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $mod+Shift+c reload;  exec notify-send "Config is updated"
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
 bindsym $mod+Shift+r restart
 
@@ -299,4 +303,8 @@ exec_always --no-startup-id $HOME/.config/xidlelock.sh
 bindsym $mod+p move workspace to output right
 # https://i3wm.org/docs/user-contributed/swapping-workspaces.html
 bindsym $mod+Shift+s exec $HOME/.config/i3/scripts/i3-display-swap.sh
-bindsym $mod + XF86Tools exec wifi-menu; notify-send "Key is pressed"
+bindsym $mod + XF86Tools exec sudo -n /usr/bin/wifi-menu; exec notify-send "Key is pressed"
+
+# just for testing 
+bindsym $mod + Shift + u exec $HOME/.config/i3/scripts/dunst.sh
+

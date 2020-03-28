@@ -26,6 +26,7 @@ alias \
 alias vimconf='nvim ~/.config/nvim/init.vim'
 alias vimi3='nvim ~/.config/i3/config'
 alias config='/usr/bin/git --git-dir=/home/dzmitry/.cfg/ --work-tree=/home/dzmitry'
+alias vimbar='nvim ~/.config/polybar/config'
 
 alias py3=python3
 # low-level stuff and C related
