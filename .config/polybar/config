@@ -72,9 +72,9 @@ font-3 = "Font Awesome 5 Free Regular:style=Solid:pixelsize=8;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = i3 xwindow
-modules-center = date 
+modules-center = date
 ;modules-right = arrow1 networkspeedup networkspeeddown arrow2 backlight arrow2 date
-modules-right = xkeyboard networkspeedup networkspeeddown wireless-network backlight alsa battery powermenu 
+modules-right = xkeyboard networkspeedup networkspeeddown wireless-network backlight alsa battery sep
 
 separator = " | "
 ; temp
@@ -245,6 +245,12 @@ format-background = ${colors.background}
 ################################################################################
 
 
+[module/sep]
+; grey to Blue
+type = custom/text
+content = " "
+content-background = ${colors.background}
+
 [module/arrow1]
 ; grey to Blue
 type = custom/text
@@ -394,8 +400,8 @@ date-alt = "%a %b %d"
 time = %H:%M
 time-alt = %l:%M%p
 format-prefix-foreground = #fefefe
-format-foreground = ${colors.text-color} 
-format-background = ${colors.background} 
+format-foreground = ${colors.text-color}
+format-background = ${colors.background}
 label = "%date%, %time%"
 
 #################################################################
@@ -461,9 +467,9 @@ label-connected = "%upspeed:7%"
 format-connected = <label-connected>
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.text-color}
-format-connected-foreground = ${colors.text-color} 
-format-connected-background = ${colors.background} 
-ping-interval = 2 
+format-connected-foreground = ${colors.text-color}
+format-connected-background = ${colors.background}
+ping-interval = 2
 ################################################################################
 
 [module/networkspeeddown]
@@ -476,10 +482,10 @@ interface = wlp82s0
 label-connected = "%downspeed:7%"
 format-connected = <label-connected>
 format-connected-prefix = "  "
-format-connected-prefix-foreground = ${colors.text-color} 
-format-connected-foreground = ${colors.text-color}  
-format-connected-background = ${colors.background} 
-ping-interval = 2 
+format-connected-prefix-foreground = ${colors.text-color}
+format-connected-foreground = ${colors.text-color}
+format-connected-background = ${colors.background}
+ping-interval = 2
 ################################################################################
 
 
@@ -836,11 +842,11 @@ menu-2-1 = back
 menu-2-1-exec = menu-open-0
 format-spacing = 1
 format-background = ${colors.background}
-format-foreground = ${colors.foreground} 
+format-foreground = ${colors.foreground}
 format-padding = 1
 
 label-open = 
-label-close =  
+label-close = 
 label-separator = |
 
 
@@ -851,14 +857,14 @@ type = internal/alsa
 format-volume = <ramp-volume> <label-volume>
 format-volume-background = ${colors.background}
 format-volume-foreground = ${colors.foreground}
-format-volume-padding = 1 
+format-volume-padding = 1
 
-label-volume = %percentage%% 
+label-volume = %percentage%%
 
 format-muted-prefix = 
 format-muted-background = ${colors.background}
 format-muted-foreground = ${colors.foreground}
-format-muted-padding = 1 
+format-muted-padding = 1
 
 ramp-volume-0 = 
 ramp-volume-1 = 
@@ -867,5 +873,5 @@ ramp-volume-3 = 
 ramp-volume-4 = 
 
 
-# vim:ft=dosini   
-   
+# vim:ft=dosini
+

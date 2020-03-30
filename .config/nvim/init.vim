@@ -13,12 +13,13 @@ Plugin 'tpope/vim-fugitive'
 Plugin 'dracula/vim', {'name': 'dracula'}
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary' " for easy commenting -gc
-Plugin 'mboughaba/i3config.vim' " syntax highlighting for i3 config file 
+Plugin 'mboughaba/i3config.vim' " syntax highlighting for i3 config file
 Plugin 'vim-airline/vim-airline' " for pretty bar
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jreybert/vimagit' " git operations in few key press
 Plugin 'scrooloose/nerdtree'
 Plugin 'vimwiki/vimwiki'
+Plugin 'mbbill/undotree'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -119,3 +120,5 @@ ino <Down> <Nop>
 ino <Left> <Nop>
 ino <Right> <Nop>
 let g:airline_powerline_fonts = 1
+" for browsing files
+nmap bo :browse oldfiles<CR>

@@ -1,0 +1,5 @@
+#!/bin/sh
+echo "Some" > ~/test.txt
+setxkbmap -option caps:escape
+setxkbmap us,ru -option 'grp:alt_shift_toggle'
+xinput --set-prop 12 'libinput Accel Speed' 0.5
