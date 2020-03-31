@@ -1,5 +1,5 @@
 [Desktop Entry]
 Type=Application
 Name=File Manager
-Exec=/usr/bin/ranger %u
+Exec=/usr/local/bin/st -n "dropdown_ranger" -e ranger %u
 

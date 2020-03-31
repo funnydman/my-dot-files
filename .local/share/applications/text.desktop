@@ -1,4 +1,4 @@
 [Desktop Entry]
 Type=Application
 Name=Text editor
-Exec=/usr/local/bin/st -e nvim %u
+Exec=$HOME/.config/scripts/move_to_next_available_ws.py %u

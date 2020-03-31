@@ -197,9 +197,35 @@ assign [class="Firefox"] $ws1
 assign [class="jetbrains-pycharm"] $ws2
 
 for_window [class="Lxappearance"] floating enable border pixel 1
-for_window [title="Skype"] floating enable border pixel 1
+#for_window [title="Skype"] floating enable border pixel 1
+#for_window [title="Skype"] move scratchpad
+
+for_window [class="MPlayer"] floating enable
+for_window [class="MPlayer"] sticky enable
+for_window [class="MPlayer"] move position center
+
 for_window [title="Telegram"] floating enable border pixel 1
 for_window [title="KeePass"] floating enable border pixel 1
+for_window [class="firefox" title="Library" window_role="Organizer"] floating enable border pixel 1
+for_window [class="firefox" title="Library" window_role="Organizer"] resize set 800 600
+for_window [class="firefox" title="Library" window_role="Organizer"] move position center
+
+for_window [instance="dropdown_ranger" title="ranger"] floating enable border pixel 3
+for_window [instance="dropdown_ranger" title="ranger"] stiky enable
+for_window [instance="dropdown_ranger" title="ranger"] resize set 1400 1000
+for_window [instance="dropdown_ranger" title="ranger"] move position center
+
+
+for_window [instance="jetbrains-pycharm" title=".*\(.*\)"] floating enable border pixel 2
+for_window [instance="jetbrains-pycharm" title=".*\(.*\)"] resize set 1400 1000
+for_window [instance="jetbrains-pycharm" title=".*\(.*\)"] move position center
+
+# for_window [instance="dropdown_code" title="ranger"] floating enable border pixel 3
+# for_window [instance="dropdown_code" title="ranger"] stiky enable
+# for_window [instance="dropdown_code" title="ranger"] resize set 1200 800
+# for_window [instance="dropdown_code" title="ranger"] move position center
+
+# for_window [instance="code-oss"]
 # for_window [title=".*\s(.*)" class="jetbrains-pycharm"] fullscreen enable
 # Making IntelliJ IDEA loading window float nicely in the center.
 for_window [class="jetbrains-pycharm" title="win0"] floating enable;
@@ -239,7 +265,7 @@ mode "resize" {
 bindsym $mod+r mode "resize"
 
 # Lock screen
-bindsym $mod+Escape exec --no-startup-id i3lock-fancy
+bindsym $mod+Escape exec --no-startup-id i3lock-fancy;exec xkb-switch -s us
 
 #############################
 ### settings for i3-gaps: ###
