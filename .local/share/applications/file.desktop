@@ -1,0 +1,5 @@
+[Desktop Entry]
+Type=Application
+Name=File Manager
+Exec=/usr/bin/ranger %u
+
