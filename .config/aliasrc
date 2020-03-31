@@ -48,8 +48,6 @@ alias sshadd='eval `ssh-agent -s`; ssh-add '
 alias sco='stat -c "%a %n"'
 # copy to clickboard from terminal
 alias xsel='xsel -b'
-alias apti='sudo apt-get install -y'
-alias agu='sudo apt-get update'
 alias c='clear'
 alias e='exit'
 # when I make typos it can be handy | don't judge me)
@@ -59,7 +57,7 @@ alias св='cd'
 # tree aliaces
 alias tree='tree --dirsfirst'
 
-# git aliases
+# git aliases | TODO keep in git aliases instead
 alias gtree='git log --graph --full-history --all --color --pretty=format:"%x1b[33m%h%x09%x09%x1b[32m%d%x1b[0m %x1b[34m%an%x1b[0m   %s" "$@"'
 
 # docker stuff
@@ -72,6 +70,7 @@ alias dcu='docker-compose up'
 alias dcubn='docker-compose build --no-cache; docker-compose up'
 # Delete all containers
 alias drm='docker rm $(docker ps -a -q)'
+alias ds='docker container stop $(docker ps -aq)'
 # Delete all images
 alias drmi='docker rmi $(docker images -q)'
 alias dm='docker-machine'

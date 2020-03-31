@@ -14,7 +14,7 @@ compositing-overline = over
 compositing-underline = over
 compositing-border = over
 
-; Define fallback values used by all module formats
+; Define fallback values used by all module formats | change that
 format-foreground = #FF0000
 format-background = #00FF00
 
@@ -22,7 +22,7 @@ format-background = #00FF00
 ; Nord theme ============
 background = #292d3e
 foreground = #c0c5ce
-alert = #bd2c40
+alert      = #bd2c40
 text-color = #fefefe
 volume-min = #a3be8c
 volume-med = #ebcb8b
@@ -287,18 +287,6 @@ content-background = #7197E7
 ################################################################################
 ############                       Custom MODULES                   ############
 ################################################################################
-
-;[module/backlight-acpi]
-;inherit = module/xbacklight
-;type = internal/backlight
-;card = intel_backlight
-;format-foreground = ${colors.foreground}
-;format-background = ${colors.background}
-;format-prefix-foreground = #7D49B6
-;format-prefix-underline = #7D49B6
-;format-underline = #7D49B6
-################################################################################
-
 [module/backlight]
 ;https://github.com/jaagr/polybar/wiki/Module:-backlight
 
@@ -488,229 +476,6 @@ format-connected-background = ${colors.background}
 ping-interval = 2
 ################################################################################
 
-
-;[module/pavolume]
-;type = custom/script
-;tail = true
-;label = %output%
-;exec = ~/.config/polybar/scripts/pavolume.sh --listen
-;click-right = exec pavucontrol
-;click-left = ~/.config/polybar/scripts/pavolume.sh --togmute
-;scroll-up = ~/.config/polybar/scripts/pavolume.sh --up
-;scroll-down = ~/.config/polybar/scripts/pavolume.sh --down
-;format-foreground = #fefefe
-;format-background = #7197E7
-;
-;
-;################################################################################
-;
-;[module/pub-ip]
-;;https://linuxconfig.org/polybar-a-better-wm-panel-for-your-linux-system
-;type = custom/script
-;exec = ~/.config/polybar/scripts/pub-ip.sh
-;interval = 100
-;format-foreground = ${colors.foreground}
-;format-background = ${colors.background}
-;format-underline = #FFBB00
-;label = %output%
-;format-prefix = "  "
-;format-prefix-foreground = #FFBB00
-;
-;################################################################################
-;
-;[module/release]
-;type = custom/script
-;exec = (lsb_release -d | awk {'print $2'} ;echo " "; lsb_release -r | awk {'print $2'}) | tr -d '\n'
-;interval = 6000
-;
-;format-foreground = ${colors.foreground}
-;format-background = ${colors.background}
-;format-prefix = "  "
-;format-prefix-foreground = #62FF00
-;format-underline = #62FF00
-;
-;################################################################################
-;
-;[module/sep]
-;; alternative separator
-;type = custom/text
-;content = 
-;content-foreground = ${colors.foreground}
-;content-background =  ${colors.background}
-;format-foreground = ${colors.foreground}
-;format-background = ${colors.background}
-;
-;################################################################################
-;
-;[module/spotify1]
-;;https://github.com/NicholasFeldman/dotfiles/blob/master/polybar/.config/polybar/spotify.sh
-;type = custom/script
-;exec = ~/.config/polybar/scripts/spotify1.sh
-;interval = 1
-;
-;;format = <label>
-;format-foreground = ${colors.foreground}
-;format-background = ${colors.background}
-;format-padding = 2
-;format-underline = #0f0
-;format-prefix = "  "
-;format-prefix-foreground = #0f0
-;label = %output:0:150%
-;
-;################################################################################
-;
-;[module/temperature1]
-;;https://github.com/jaagr/polybar/wiki/Module:-temperature
-;type = internal/temperature
-;; Thermal zone to use
-;; To list all the zone types, run
-;; $ for i in /sys/class/thermal/thermal_zone*; do echo "$i: $(<$i/type)"; done
-;; Default: 0
-;thermal-zone = 0
-;
-;; Full path of temperature sysfs path
-;; Use `sensors` to find preferred temperature source, then run
-;; $ for i in /sys/class/hwmon/hwmon*/temp*_input; do echo "$(<$(dirname $i)/name): $(cat ${i%_*}_label 2>/dev/null || echo $(basename ${i%_*})) $(readlink -f $i)"; done
-;; to find path to desired file
-;; Default reverts to thermal zone setting
-;hwmon-path = /sys/devices/platform/coretemp.0/hwmon/hwmon1/temp1_input
-;
-;warn-temperature = 70
-;format = <ramp> <label>
-;format-foreground = ${colors.foreground}
-;format-background = ${colors.background}
-;format-underline = #c72581
-;format-warn = <ramp> <label-warn>
-;format-warn-underline = #c7254f
-;label = %temperature%
-;label-warn =  %temperature%
-;label-warn-foreground = #c7254f
-;
-;ramp-0 = 
-;ramp-1 = 
-;ramp-2 = 
-;ramp-3 = 
-;ramp-4 = 
-;ramp-foreground =${colors.foreground}
-;
-;################################################################################
-;
-;[module/temperature2]
-;type = custom/script
-;exec = ~/.config/polybar/scripts/tempcores.sh
-;interval = 2
-;format-padding = 1
-;format-foreground = ${colors.foreground}
-;format-background = ${colors.background}
-;format-underline = #C1B93E
-;format-prefix-foreground = #C1B93E
-;label =  %output:0:150:%
-;
-;################################################################################
-;
-;[module/title-xmonad]
-;type = custom/script
-;exec = tail -F /tmp/.xmonad-title-log
-;exec-if = [ -p /tmp/.xmonad-title-log ]
-;tail = true
-;
-;################################################################################
-;
-;[module/uptime]
-;;https://github.com/jaagr/polybar/wiki/User-contributed-modules#uptime
-;type = custom/script
-;exec = uptime | awk -F, '{sub(".*up ",x,$1);print $1}'
-;interval = 100
-;label = Uptime : %output%
-;
-;format-foreground = ${colors.foreground}
-;format-background = ${colors.background}
-;format-prefix = " "
-;format-prefix-foreground = #C15D3E
-;format-underline = #C15D3E
-;
-;################################################################################
-
-;[module/volume]
-;;https://github.com/jaagr/polybar/wiki/Module:-volume
-;type = internal/volume
-;format-volume = "<label-volume>  <bar-volume>"
-;
-;label-volume = " "
-;label-volume-foreground = #40ad4b
-;label-muted = muted
-;
-;bar-volume-width = 10
-;bar-volume-foreground-0 = #40ad4b
-;bar-volume-foreground-1 = #40ad4b
-;bar-volume-foreground-2 = #40ad4b
-;bar-volume-foreground-3 = #40ad4b
-;bar-volume-foreground-4 = #40ad4b
-;bar-volume-foreground-5 = #40ad4b
-;bar-volume-foreground-6 = #40ad4b
-;bar-volume-gradient = false
-;bar-volume-indicator = 
-;bar-volume-indicator-font = 2
-;bar-volume-fill = 
-;bar-volume-fill-font = 2
-;bar-volume-empty = 
-;bar-volume-empty-font = 2
-;bar-volume-empty-foreground = ${colors.foreground}
-;format-volume-foreground = ${colors.foreground}
-;format-volume-background = ${colors.background}
-;format-muted-prefix = "  "
-;format-muted-prefix-foreground = "#ff0000"
-;format-muted-foreground = ${colors.foreground}
-;format-muted-background = ${colors.background}
-;
-################################################################################
-
-[module/weather]
-type = custom/script
-interval = 10
-format = <label>
-format-prefix = " "
-format-prefix-foreground = #3EC13F
-format-underline = #3EC13F
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-exec = python -u ~/.config/polybar/scripts/weather.py
-tail = true
-
-#################################################################################
-
-;[module/wired-network]
-;;https://github.com/jaagr/polybar/wiki/Module:-network
-;type = internal/network
-;interface = enp4s0
-;;interface = enp14s0
-;interval = 3.0
-;
-;; Available tokens:
-;;   %ifname%    [wireless+wired]
-;;   %local_ip%  [wireless+wired]
-;;   %essid%     [wireless]
-;;   %signal%    [wireless]
-;;   %upspeed%   [wireless+wired]
-;;   %downspeed% [wireless+wired]
-;;   %linkspeed% [wired]
-;; Default: %ifname% %local_ip%
-;label-connected =  %ifname%
-;label-disconnected = %ifname% disconnected
-;
-;format-connected-foreground = ${colors.foreground}
-;format-connected-background = ${colors.background}
-;format-connected-underline = #55aa55
-;format-connected-prefix = " "
-;format-connected-prefix-foreground = #55aa55
-;format-connected-prefix-background = ${colors.background}
-;
-;format-disconnected = <label-disconnected>
-;format-disconnected-underline = ${colors.alert}
-;label-disconnected-foreground = ${colors.foreground}
-
-################################################################################
-
 [module/wireless-network]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
 type = internal/network
@@ -749,14 +514,6 @@ ramp-signal-5 = ▆
 ramp-signal-6 = ▇
 ramp-signal-7 = █
 ramp-signal-foreground = #7e52c6
-
-################################################################################
-
-[module/workspaces-xmonad]
-type = custom/script
-exec = tail -F /tmp/.xmonad-workspace-log
-exec-if = [ -p /tmp/.xmonad-workspace-log ]
-tail = true
 
 ################################################################################
 
