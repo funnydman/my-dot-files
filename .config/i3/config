@@ -20,9 +20,6 @@ bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
-# Font for window titles. Will also be used by the bar unless a different font
-# is used in the bar {} block below.
-
 # Use Mouse+$mod to drag floating windows
 floating_modifier $mod
 
@@ -45,7 +42,6 @@ exec_always --no-startup-id dunst
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
 exec --no-startup-id guake
 exec --no-startup-id skype
-exec --no-startup-id dropbox
 exec --no-startup-id flameshot
 
 # start a terminal
@@ -73,9 +69,6 @@ mode "exit: [l]ogout, [r]eboot, [s]hutdown" {
   bindsym Escape mode "default"
   bindsym Return mode "default"
 }
-
-# testing
-#bindsym $mod+u exec ~/.config/i3/scripts/dunst.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -191,7 +184,6 @@ client.placeholder      #000000 #0c0c0c #ffffff #000000
 
 client.background       #2B2C2B
 
-
 # Open applications on specific workspaces
 assign [class="Firefox"] $ws1
 assign [class="jetbrains-pycharm"] $ws2
@@ -215,18 +207,15 @@ for_window [instance="dropdown_ranger" title="ranger"] stiky enable
 for_window [instance="dropdown_ranger" title="ranger"] resize set 1400 1000
 for_window [instance="dropdown_ranger" title="ranger"] move position center
 
-
 for_window [instance="jetbrains-pycharm" title=".*\(.*\)"] floating enable border pixel 2
-for_window [instance="jetbrains-pycharm" title=".*\(.*\)"] resize set 1400 1000
 for_window [instance="jetbrains-pycharm" title=".*\(.*\)"] move position center
+for_window [instance="jetbrains-pycharm" title=".*\(.*\)"] resize set 1400 1000
 
 # for_window [instance="dropdown_code" title="ranger"] floating enable border pixel 3
 # for_window [instance="dropdown_code" title="ranger"] stiky enable
 # for_window [instance="dropdown_code" title="ranger"] resize set 1200 800
 # for_window [instance="dropdown_code" title="ranger"] move position center
 
-# for_window [instance="code-oss"]
-# for_window [title=".*\s(.*)" class="jetbrains-pycharm"] fullscreen enable
 # Making IntelliJ IDEA loading window float nicely in the center.
 for_window [class="jetbrains-pycharm" title="win0"] floating enable;
 # switch to workspace with urgent window automatically
@@ -338,3 +327,4 @@ bindsym $mod + XF86Tools exec sudo -n /usr/bin/wifi-menu; exec notify-send "Key 
 bindsym $mod + Shift + u exec $HOME/.config/i3/scripts/dunst.sh
 
 # control keyboard brightness
+# brightnessctl --device='tpacpi::kbd_backlight' set 1
