@@ -53,7 +53,8 @@ bindsym $mod+Shift+q kill
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show run -theme solarized_alternate
 
-bindsym $mod+F1 exec --no-startup-id notify-send "testin"
+# execute and focus or just focus if executed
+bindsym $mod+XF86AudioMute exec --no-startup-id firefox
 
 bindsym Print exec "flameshot gui"
 
@@ -210,6 +211,9 @@ for_window [instance="dropdown_ranger" title="ranger"] move position center
 for_window [instance="jetbrains-pycharm" title=".*\(.*\)"] floating enable border pixel 2
 for_window [instance="jetbrains-pycharm" title=".*\(.*\)"] move position center
 for_window [instance="jetbrains-pycharm" title=".*\(.*\)"] resize set 1400 1000
+
+for_window [class="^jetbrains-.+"][window_type=dialog] focus
+for_window [instance="sun-awt-X11-XWindowPeer"] border pixel 0
 
 # for_window [instance="dropdown_code" title="ranger"] floating enable border pixel 3
 # for_window [instance="dropdown_code" title="ranger"] stiky enable

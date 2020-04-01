@@ -1,7 +1,39 @@
 # Luke's config for the Zoomer Shell
 
+# git_branch() {
+#  # get git branch name
+#  echo $(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
+# }
+
+setopt prompt_subst
+# allow command substitution inside the prompt
+# function to return current branch name while suppressing errors.
+# function git_branch() {
+#     branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
+#     if [[ $branch == "" ]]; then
+#         :
+#     else
+#         echo ' (' $branch ') '
+#     fi
+# }
+
+
+# autoload -Uz vcs_info
+# precmd() { vcs_info }
+
+# # Format the vcs_info_msg_0_ variable
+# zstyle ':vcs_info:git:*' formats 'on branch %b'
+
+# # Set up the prompt (with git branch name)
+# setopt PROMPT_SUBST
+# PROMPT='%n in ${PWD/#$HOME/~} ${vcs_info_msg_0_} > '
+#setopt PROMPT_SUBST
 autoload -U colors && colors
-PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
+
+
+#PROMPT='%~ $(git_branch) >'     # set the prompt value
+
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
@@ -9,10 +41,27 @@ PS1="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magent
 
 autoload -U compinit
 zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
 zmodload zsh/complist
 compinit
 
+setopt autocd
+setopt correct
+# HISTIGNOREDUPS prevents the current line from being saved
+# in the history if it is the same as the previous one;
+# HISTIGNORESPACE prevents the current line from being saved if it begins with a space.
+setopt histignoredups
+setopt histignorespace
+
+# Appends every command to the history file once it is executed
+# setopt inc_append_history
+
+# Appends every command to the history file once it is executed
+setopt inc_append_history
+# Reloads the history whenever you use it
+setopt share_history
 # Include hidden files in autocomplete:
+
 _comp_options+=(globdots)
 
 # Use vim keys in tab complete menu:
@@ -67,11 +116,6 @@ lfcd () {
 
 bindkey -s '^o' 'lfcd\n'  # zsh
 
-# Load zsh-syntax-highlighting; should be last.
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-
-
-
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
 export LESS_TERMCAP_me=$'\e[0m'
@@ -85,3 +129,6 @@ if [ -f '/home/dzmitry/apps/google-cloud-sdk/path.zsh.inc' ]; then . '/home/dzmi
 
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/dzmitry/apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/dzmitry/apps/google-cloud-sdk/completion.zsh.inc'; fi
+
+# Load zsh-syntax-highlighting; should be last.
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null

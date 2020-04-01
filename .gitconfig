@@ -2,3 +2,5 @@
     last = log -1 HEAD
     plog = log --oneline --decorate --all --graph
     st = status
+[help]
+	autocorrect = 1
