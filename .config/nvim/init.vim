@@ -20,6 +20,7 @@ Plugin 'jreybert/vimagit' " git operations in few key press
 Plugin 'scrooloose/nerdtree'
 Plugin 'vimwiki/vimwiki'
 Plugin 'mbbill/undotree'
+Plugin 'universal-ctags/ctags'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
