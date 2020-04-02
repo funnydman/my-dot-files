@@ -42,7 +42,7 @@ alias hd='hexdump -C'
 alias lh='ls -lah'
 alias ff='find . -name $1'
 alias mkcd='_(){ mkdir -p $1; cd $1; }; _'
-alias untar='tar -zxvf '
+alias untar='tar -xvf '
 alias sshadd='eval `ssh-agent -s`; ssh-add '
 # show file permissions as octal number
 alias sco='stat -c "%a %n"'
@@ -115,7 +115,6 @@ alias netap='sudo netstat -ap'
 alias myip="curl http://ipecho.net/plain; echo"
 
 # keepass
-
 __get_entry_name() {
     if [[ -n "$1" ]]; then
         keepassxc-cli clip ~/Dropbox/KP2A/actual.kdbx $1
