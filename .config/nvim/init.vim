@@ -10,6 +10,7 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tpope/vim-fugitive'
+Plugin 'ryanoasis/vim-devicons'
 Plugin 'dracula/vim', {'name': 'dracula'}
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary' " for easy commenting -gc
@@ -25,6 +26,7 @@ Plugin 'universal-ctags/ctags'
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+"  defaults
 set encoding=utf-8
 set clipboard=unnamedplus " for easy copy pasting
 set number relativenumber
@@ -37,7 +39,6 @@ syntax on
 
 " Enable autocompletion:
 set wildmode=longest,list,full
-
 
 " Disables automatic commenting on newline:
 	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
