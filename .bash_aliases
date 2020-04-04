@@ -2,7 +2,7 @@ alias vim='nvim'
 alias vimconf='nvim ~/.config/nvim/init.vim'
 alias vimi3='nvim ~/.config/i3/config'
 alias config='/usr/bin/git --git-dir=/home/dzmitry/.cfg/ --work-tree=/home/dzmitry'
-
+alias vimpolybar='nvim ~/.config/polybar/config'
 
 alias py3=python3
 # low-level stuff and C related
@@ -45,7 +45,7 @@ __dcub() {
 alias dcub=__dcub
 alias dcu='docker-compose up'
 #alias dcub='docker-compose up --build'
-alias dcubn='docker-compose build --no-cache; docker-compose up' 
+alias dcubn='docker-compose build --no-cache; docker-compose up'
 # Delete all containers
 alias drm='docker rm $(docker ps -a -q)'
 # Delete all images
@@ -61,7 +61,7 @@ __export_vars() {
 
 alias source_file=__export_vars
 
-# ssh 
+# ssh
 __add_ssh_key() {
 if [[ -n "$1" ]] && [[ -f ~/.ssh/$1 ]];  then
     eval `ssh-agent -s`>/dev/null 2>&1

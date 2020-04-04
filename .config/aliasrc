@@ -12,11 +12,17 @@ alias \
 	mkd="mkdir -pv"
 
 # Colorize commands when possible.
+#ls="ls -hN --color=auto --group-directories-first" \
 alias \
-	ls="ls -hN --color=auto --group-directories-first" \
 	grep="grep --color=auto" \
 	diff="diff --color=auto" \
 	ccat="highlight --out-format=ansi"
+
+# "exa" is better alternative to "ls"
+alias ls='exa -al --color=always --group-directories-first' # my preferred listing
+alias la='exa -a --color=always --group-directories-first'  # all files and dirs
+alias ll='exa -l --color=always --group-directories-first'  # long format
+alias lt='exa -aT --color=always --group-directories-first' # tree listing
 
 # These common commands are just too long! Abbreviate them.
 alias \
@@ -27,6 +33,8 @@ alias vimconf='nvim ~/.config/nvim/init.vim'
 alias vimi3='nvim ~/.config/i3/config'
 alias config='/usr/bin/git --git-dir=/home/dzmitry/.cfg/ --work-tree=/home/dzmitry'
 alias vimbar='nvim ~/.config/polybar/config'
+alias vimalias='nvim ~/.config/aliasrc'
+alias vimpolybar='nvim ~/.config/polybar/config'
 
 alias py3=python3
 # low-level stuff and C related
@@ -53,6 +61,30 @@ alias e='exit'
 # when I make typos it can be handy | don't judge me)
 alias ды='ls'
 alias св='cd'
+
+# # ex - archive extractor
+# # usage: ex <file>
+ex ()
+{
+  if [ -f $1 ] ; then
+    case $1 in
+      *.tar.bz2)   tar xjf $1   ;;
+      *.tar.gz)    tar xzf $1   ;;
+      *.bz2)       bunzip2 $1   ;;
+      *.rar)       unrar x $1     ;;
+      *.gz)        gunzip $1    ;;
+      *.tar)       tar xf $1    ;;
+      *.tbz2)      tar xjf $1   ;;
+      *.tgz)       tar xzf $1   ;;
+      *.zip)       unzip $1     ;;
+      *.Z)         uncompress $1;;
+      *.7z)        7z x $1      ;;
+      *)           echo "'$1' cannot be extracted via ex()" ;;
+    esac
+  else
+    echo "'$1' is not a valid file"
+  fi
+}
 
 # tree aliaces
 alias tree='tree --dirsfirst'
