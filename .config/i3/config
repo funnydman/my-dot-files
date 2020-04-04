@@ -12,8 +12,8 @@ font xft:URWGothic-Book 11
 new_window pixel 2
 new_float normal
 
-
-focus_follows_mouse no
+# do I need this?
+#focus_follows_mouse no
 
 # Hide borders (default: none)
 hide_edge_borders none
@@ -37,10 +37,13 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 bindsym $mod+s [title="Skype"] scratchpad show
 
 # too much social stuff!
-#bindsym $mod+t [class="TelegramDesktop"] scratchpad show
+bindsym $mod+t [class="TelegramDesktop"] scratchpad show
 
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 5
+
+bindsym $mod + XF86MonBrightnessUp exec brightnessctl --device='tpacpi::kbd_backlight' set +50%
+bindsym $mod + XF86MonBrightnessDown exec brightnessctl --device='tpacpi::kbd_backlight' set 50%-
 
 # startup applications
 exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpapers/wall.jpg
@@ -52,6 +55,7 @@ exec_always --no-startup-id dunst
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
 exec --no-startup-id guake
 exec --no-startup-id skype
+exec --no-startup-id telegram-desktop
 exec --no-startup-id flameshot
 
 # start a terminal
@@ -113,7 +117,7 @@ bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_
 # split orientation
 bindsym $mod+z split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
-bindsym $mod+q split toggle
+bindsym $mod+q split toggle;exec notify-send 'toggle'
 
 # split in horizontal orientation
 #bindsym $mod+h split h
@@ -355,3 +359,4 @@ bindsym $mod + Shift + u exec $HOME/.config/i3/scripts/dunst.sh
 
 # control keyboard brightness
 # brightnessctl --device='tpacpi::kbd_backlight' set 1
+bindsym $mod + grave exec $HOME/.config/scripts/next_available.py

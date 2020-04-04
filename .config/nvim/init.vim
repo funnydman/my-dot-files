@@ -22,6 +22,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vimwiki/vimwiki'
 Plugin 'mbbill/undotree'
 Plugin 'universal-ctags/ctags'
+Plugin 'arakashic/chromatica.nvim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
