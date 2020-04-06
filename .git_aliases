@@ -1,0 +1,6 @@
+last = log -1 HEAD
+plog = log --oneline --decorate --all --graph
+st = status
+parent = !git show-branch | grep '*' | grep -v "$(git rev-parse --abbrev-ref HEAD)" | head -n1 | sed 's/.*\[\(.*\)\].*/\1/' | sed 's/[\^~].*//' #
+alias = ! git config --get-regexp ^alias\. | sed -e s/^alias\.// -e s/\ /\ =\ /
+

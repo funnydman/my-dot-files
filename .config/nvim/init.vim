@@ -42,9 +42,9 @@ syntax on
 set wildmode=longest,list,full
 
 " Disables automatic commenting on newline:
-	autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
+autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Spell-check set to <leader>o, 'o' for 'orthography':
-	map <leader>o :setlocal spell! spelllang=en_us<CR>
+map <leader>o :setlocal spell! spelllang=en_us<CR>
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 	set splitbelow splitright
@@ -83,7 +83,8 @@ set wildmode=longest,list,full
 " " Update binds when sxhkdrc is updated.
 " 	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
 
-" Turns off highlighting on the bits of code that are changed, so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
+" Turns off highlighting on the bits of code that are changed,
+" so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
 " if &diff
 "     highlight! link DiffText MatchParen
 " endif
@@ -109,7 +110,6 @@ highlight ColorColumn ctermbg=darkgray
 " filetype
 au FileType asm setlocal ft=nasm
 " enable all Python syntax highlighting features
-
 
 " Disable arrows usage
 noremap <silent> <Up> <Nop>
