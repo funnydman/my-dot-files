@@ -34,10 +34,10 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 
 #bindsym $mod+XF86AudioRaiseVolume [title="Skype"] scratchpad show
 
-bindsym $mod+s [title="Skype"] scratchpad show
+bindsym $mod+s exec --no-startup-id $HOME/.config/scripts/switcher.py --name Skype
 
 # too much social stuff!
-bindsym $mod+t [class="TelegramDesktop"] scratchpad show
+bindsym $mod+t exec --no-startup-id $HOME/.config/scripts/switcher.py --name TelegramDesktop
 
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 5
@@ -205,6 +205,7 @@ assign [class="Firefox"] $ws1
 assign [class="jetbrains-pycharm"] $ws2
 
 for_window [class="Lxappearance"] floating enable border pixel 1
+for_window [class="Gitk"] floating enable border pixel 1
 
 for_window [title="Skype"] floating enable border pixel 1
 for_window [title="Skype"] move scratchpad

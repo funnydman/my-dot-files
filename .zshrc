@@ -53,6 +53,19 @@ setopt correct
 setopt histignoredups
 setopt histignorespace
 
+# history settings
+HISTFILE=~/.zsh_history
+HISTSIZE=10000
+SAVEHIST=10000
+setopt appendhistory
+
+#setopt SHARE_HISTORY
+# INC_APPEND_HISTORY_TIME
+
+# setopt    appendhistory     #Append history to the history file (no overwriting)
+# setopt    sharehistory      #Share history across terminals
+# setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
+
 # Appends every command to the history file once it is executed
 # setopt inc_append_history
 

@@ -22,7 +22,9 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'vimwiki/vimwiki'
 Plugin 'mbbill/undotree'
 Plugin 'universal-ctags/ctags'
+Plugin 'morhetz/gruvbox'
 Plugin 'arakashic/chromatica.nvim'
+Plugin 'junegunn/fzf.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -33,6 +35,11 @@ set clipboard=unnamedplus " for easy copy pasting
 set number relativenumber
 " searching
 set incsearch
+set path+=**
+command! MakeTags !ctags -R .
+
+:map <F11>  :sp tags<CR>:%s/^\([^   :]*:\)\=\([^    ]*\).*/syntax keyword Tag \2/<CR>:wq! tags.vim<CR>/^<CR><F12>
+:map <F12>  :so tags.vim<CR>
 
 " adds fancy colors, for eyes
 syntax on
@@ -47,47 +54,34 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 map <leader>o :setlocal spell! spelllang=en_us<CR>
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
-	set splitbelow splitright
+set splitbelow splitright
 " Nerd tree
-	map <leader>n :NERDTreeToggle<CR>
-	autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+map <leader>n :NERDTreeToggle<CR>
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Shortcutting split navigation, saving a keypress:
-	map <C-h> <C-w>h
-	map <C-j> <C-w>j
-	map <C-k> <C-w>k
-	map <C-l> <C-w>l
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
+" Move to beginning/end of line
+nnoremap B ^
+nnoremap E $
+
+" Shift to the next round tab stop.
+set shiftround
+" Set auto indent spacing.
+set shiftwidth=2
 
 " Replace ex mode with gq
-	map Q gq
-
-
-" Ensure files are read as what I want:
-	let g:vimwiki_ext2syntax = {'.Rmd': 'markdown', '.rmd': 'markdown','.md': 'markdown', '.markdown': 'markdown', '.mdown': 'markdown'}
-	" map <leader>v :VimwikiIndex
-	let g:vimwiki_list = [{'path': '~/vimwiki', 'syntax': 'markdown', 'ext': '.md'}]
-	" autocmd BufRead,BufNewFile /tmp/calcurse*,~/.calcurse/notes/* set filetype=markdown
-	autocmd BufRead,BufNewFile *.ms,*.me,*.mom,*.man set filetype=groff
-	autocmd BufRead,BufNewFile *.tex set filetype=tex
+map Q gq
 
 " Save file as sudo on files that require root permission
-	cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
+cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!
 
 " Automatically deletes all trailing whitespace on save.
-	autocmd BufWritePre * %s/\s\+$//e
-
-" " When shortcut files are updated, renew bash and ranger configs with new material:
-" 	autocmd BufWritePost files,directories !shortcuts
-" " Run xrdb whenever Xdefaults or Xresources are updated.
-" 	autocmd BufWritePost *Xresources,*Xdefaults !xrdb %
-" " Update binds when sxhkdrc is updated.
-" 	autocmd BufWritePost *sxhkdrc !pkill -USR1 sxhkd
-
-" Turns off highlighting on the bits of code that are changed,
-" so the line that is changed is highlighted but the actual text that has changed stands out on the line and is readable.
-" if &diff
-"     highlight! link DiffText MatchParen
-" endif
+autocmd BufWritePre * %s/\s\+$//e
 
 set nu
 set ruler
@@ -99,11 +93,19 @@ set noerrorbells " No annoying sound
 set tabstop=4
 set shiftwidth=4
 set expandtab
+" do I need this?
 retab
 set autoindent
 set smartindent
 set cindent
 set colorcolumn=110
+
+" set nowrap
+set noswapfile
+set nobackup
+set undodir=~/.vim/undodir
+set undofile
+
 highlight ColorColumn ctermbg=darkgray
 
 
@@ -122,6 +124,8 @@ ino <Up> <Nop>
 ino <Down> <Nop>
 ino <Left> <Nop>
 ino <Right> <Nop>
-let g:airline_powerline_fonts = 1
+" let g:airline_powerline_fonts = 1
 " for browsing files
 nmap bo :browse oldfiles<CR>
+
+hi Normal guibg=NONE ctermbg=NONE
