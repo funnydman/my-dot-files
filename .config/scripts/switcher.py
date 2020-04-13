@@ -2,7 +2,9 @@
 import argparse
 import sys
 
-from i3ipc import Connection, Event
+# too slow?
+
+from i3ipc import Connection
 
 parser = argparse.ArgumentParser()
 parser.add_argument('--name', type=str, help='name of the scratchpad', required=True)

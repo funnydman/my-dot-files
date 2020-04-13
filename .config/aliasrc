@@ -4,12 +4,7 @@
 command -v nvim >/dev/null && alias vim="nvim" vi="nvim" vimdiff="nvim -d"
 
 # Verbosity and settings that you pretty much just always are going to want.
-alias \
-	bat="cat /sys/class/power_supply/BAT?/capacity" \
-	cp="cp -iv" \
-	mv="mv -iv" \
-	rm="rm -v" \
-	mkd="mkdir -pv"
+alias bat="cat /sys/class/power_supply/BAT?/capacity" \
 
 # Colorize commands when possible.
 #ls="ls -hN --color=auto --group-directories-first" \
@@ -19,7 +14,7 @@ alias \
 	ccat="highlight --out-format=ansi"
 
 # "exa" is better alternative to "ls"
-alias ls='exa -al --color=always --group-directories-first' # my preferred listing
+alias ls='exa -l --color=always --group-directories-first' # my preferred listing
 alias la='exa -a --color=always --group-directories-first'  # all files and dirs
 alias ll='exa -l --color=always --group-directories-first'  # long format
 alias lt='exa -aT --color=always --group-directories-first' # tree listing

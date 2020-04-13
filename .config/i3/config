@@ -361,3 +361,6 @@ bindsym $mod + Shift + u exec $HOME/.config/i3/scripts/dunst.sh
 # control keyboard brightness
 # brightnessctl --device='tpacpi::kbd_backlight' set 1
 bindsym $mod + grave exec $HOME/.config/scripts/next_available.py
+
+bindsym $mod+Tab                workspace next
+bindsym $mod+Shift+Tab          workspace prev
