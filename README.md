@@ -11,3 +11,4 @@ https://edgardorl.com/blog/keep-skype-session-in-arch-linux/
 
 ### vim
 https://www.youtube.com/watch?v=E-ZbrtoSuzw (Talk on going mouseless with Vim, Tmux, and Hotkeys)
+https://www.youtube.com/watch?v=XA2WjJbmmoM (Как сделать 90% того, что делают плагины, в чистом Vim'е)
