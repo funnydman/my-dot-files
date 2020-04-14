@@ -364,3 +364,5 @@ bindsym $mod + grave exec $HOME/.config/scripts/next_available.py
 
 bindsym $mod+Tab                workspace next
 bindsym $mod+Shift+Tab          workspace prev
+
+# xrandr --output HDMI-0 --auto --right-of eDP-1-1

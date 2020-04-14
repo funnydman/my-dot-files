@@ -33,7 +33,7 @@ volume-max = #bf616a
 ################################################################################
 
 [bar/mainbar-i3]
-monitor = ${env:MONITOR}
+monitor = ${env:MONITOR:}
 ; use as fallback on hdmi1
 monitor-fallback = HDMI1
 monitor-strict = false
