@@ -1,5 +1,3 @@
-# Luke's config for the Zoomer Shell
-
 # git_branch() {
 #  # get git branch name
 #  echo $(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
@@ -39,6 +37,7 @@ PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[mag
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
+PATH=$PATH:$HOME/.config/scripts
 autoload -U compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -46,7 +45,7 @@ zmodload zsh/complist
 compinit
 
 setopt autocd
-setopt correct
+# setopt correct
 # HISTIGNOREDUPS prevents the current line from being saved
 # in the history if it is the same as the previous one;
 # HISTIGNORESPACE prevents the current line from being saved if it begins with a space.
@@ -146,3 +145,5 @@ if [ -f '/home/dzmitry/apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/hom
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 export PATH="$HOME/.local/bin:$PATH"
+
+eval "$(hub alias -s)"

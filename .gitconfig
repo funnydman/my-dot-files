@@ -6,3 +6,6 @@
     up = !git submodule update --init --recursive
 [help]
 	autocorrect = 1
+[user]
+	email = you@example.com
+	name = Your Name

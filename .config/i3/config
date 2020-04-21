@@ -42,6 +42,7 @@ bindsym $mod+t exec --no-startup-id $HOME/.config/scripts/switcher.py --name Tel
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 5
 
+# control keyboard brightness
 bindsym $mod + XF86MonBrightnessUp exec brightnessctl --device='tpacpi::kbd_backlight' set +50%
 bindsym $mod + XF86MonBrightnessDown exec brightnessctl --device='tpacpi::kbd_backlight' set 50%-
 
@@ -214,6 +215,7 @@ for_window [title="Skype"] move scratchpad
 
 for_window [title="TelegramDesktop"] floating enable border pixel 1
 for_window [title="TelegramDesktop"] move scratchpad
+for_window [title="TelegramDesktop"] move position center
 
 for_window [title="GIMP Startup"] move workspace $ws5
 for_window [class="Gimp"] move workspace $ws5
@@ -224,6 +226,7 @@ for_window [class="MPlayer"] move position center
 
 for_window [title="Telegram"] floating enable border pixel 1
 for_window [title="KeePass"] floating enable border pixel 1
+
 for_window [class="firefox" title="Library" window_role="Organizer"] floating enable border pixel 1
 for_window [class="firefox" title="Library" window_role="Organizer"] resize set 800 600
 for_window [class="firefox" title="Library" window_role="Organizer"] move position center
@@ -234,22 +237,18 @@ for_window [instance="dropdown_ranger" title="ranger"] resize set 1400 1000
 for_window [instance="dropdown_ranger" title="ranger"] move position center
 
 
-#for_window [instance="jetbrains-pycharm"] floating enable
+for_window [title="Skype" window_role="browser-window"] border none
 
-# for_window [instance="jetbrains-pycharm" title=".*\(.*\)"] floating enable border pixel 2
-# for_window [instance="jetbrains-pycharm" title=".*\(.*\)"] move position center
-# for_window [instance="jetbrains-pycharm" title=".*\(.*\)"] resize set 1400 1000
-
-for_window [class="^jetbrains-.+"][window_type=dialog] focus
+# https://www.reddit.com/r/i3wm/comments/8gh4c0/working_fix_for_focusing_intellij_popups/
+for_window [class="^jetbrains-.+"][window_type=dialog] border pixel 2
 for_window [instance="sun-awt-X11-XWindowPeer"] border pixel 0
-
-# for_window [instance="dropdown_code" title="ranger"] floating enable border pixel 3
-# for_window [instance="dropdown_code" title="ranger"] stiky enable
-# for_window [instance="dropdown_code" title="ranger"] resize set 1200 800
-# for_window [instance="dropdown_code" title="ranger"] move position center
 
 # Making IntelliJ IDEA loading window float nicely in the center.
 for_window [class="jetbrains-pycharm" title="win0"] floating enable;
+for_window [class="Kazam" instance="kazam" title="Kazam"] floating enable
+
+exec_always --no-startup-id $HOME/.config/scripts/center_windows_jetbrains.sh
+
 # switch to workspace with urgent window automatically
 for_window [urgent=latest] focus
 
@@ -259,6 +258,7 @@ bindsym $mod+Shift+c reload;  exec notify-send "Config is updated"
 bindsym $mod+Shift+r restart
 
 # resize window (you can also use the mouse for that)
+bindsym $mod+r mode "resize"
 mode "resize" {
         # These bindings trigger as soon as you enter the resize mode
 
@@ -282,8 +282,6 @@ mode "resize" {
         bindsym Escape mode "default"
         bindsym $mod+r mode "default" # disabled distro
 }
-
-bindsym $mod+r mode "resize"
 
 # Lock screen
 bindsym $mod+Escape exec --no-startup-id i3lock-fancy;exec xkb-switch -s us
