@@ -2,18 +2,15 @@
 # Many thanks to DistroTube guy and Luke Smith
 
 ############ GENERAl #############
-
 set $mod Mod4
-#force_xinerama yes
 
-font xft:URWGothic-Book 11
-
+# font xft:URWGothic-Book 11
+font pango:monospace 8
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 2
 new_float normal
 
-# do I need this?
-#focus_follows_mouse no
+focus_follows_mouse no
 
 # Hide borders (default: none)
 hide_edge_borders none
@@ -31,8 +28,6 @@ bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
-
-#bindsym $mod+XF86AudioRaiseVolume [title="Skype"] scratchpad show
 
 bindsym $mod+s exec --no-startup-id $HOME/.config/scripts/switcher.py --name Skype
 
@@ -210,8 +205,6 @@ for_window [class="Gitk"] floating enable border pixel 1
 
 for_window [title="Skype"] floating enable border pixel 1
 for_window [title="Skype"] move scratchpad
-# for_window [title="Skype"] resize set 1400 1000
-# for_window [title="Skype"] move position center
 
 for_window [title="TelegramDesktop"] floating enable border pixel 1
 for_window [title="TelegramDesktop"] move scratchpad
@@ -240,7 +233,7 @@ for_window [instance="dropdown_ranger" title="ranger"] move position center
 for_window [title="Skype" window_role="browser-window"] border none
 
 # https://www.reddit.com/r/i3wm/comments/8gh4c0/working_fix_for_focusing_intellij_popups/
-for_window [class="^jetbrains-.+"][window_type=dialog] border pixel 2
+for_window [class="^jetbrains-.+"][window_type=dialog] focus;border pixel 2
 for_window [instance="sun-awt-X11-XWindowPeer"] border pixel 0
 
 # Making IntelliJ IDEA loading window float nicely in the center.
