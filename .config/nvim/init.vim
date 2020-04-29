@@ -129,3 +129,5 @@ ino <Right> <Nop>
 nmap bo :browse oldfiles<CR>
 
 hi Normal guibg=NONE ctermbg=NONE
+
+set showmode

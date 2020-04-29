@@ -4,8 +4,8 @@
 ############ GENERAl #############
 set $mod Mod4
 
-# font xft:URWGothic-Book 11
-font pango:monospace 8
+font xft:URWGothic-Book 11
+# font pango:monospace 8
 # Configure border style <normal|1pixel|pixel xx|none|pixel>
 new_window pixel 2
 new_float normal
@@ -199,6 +199,7 @@ client.background       #2B2C2B
 # Open applications on specific workspaces
 assign [class="Firefox"] $ws1
 assign [class="jetbrains-pycharm"] $ws2
+assign [class="libreoffice-writer"] $w7
 
 for_window [class="Lxappearance"] floating enable border pixel 1
 for_window [class="Gitk"] floating enable border pixel 1
