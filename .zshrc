@@ -111,22 +111,8 @@ echo -ne '\e[5 q'
 # Use beam shape cursor for each new prompt.
 preexec() { echo -ne '\e[5 q' ;}
 
-# Use lf to switch directories and bind it to ctrl-o
-lfcd () {
-    tmp="$(mktemp)"
-    lf -last-dir-path="$tmp" "$@"
-    if [ -f "$tmp" ]; then
-        dir="$(cat "$tmp")"
-        rm -f "$tmp"
-        if [ -d "$dir" ]; then
-            if [ "$dir" != "$(pwd)" ]; then
-                cd "$dir"
-            fi
-        fi
-    fi
-}
-
-bindkey -s '^o' 'lfcd\n'  # zsh
+# # Use lf to switch directories and bind it to ctrl-o
+bindkey -s '^o' 'vim -o $(fzf)\n'  # zsh
 
 export LESS_TERMCAP_mb=$'\e[1;32m'
 export LESS_TERMCAP_md=$'\e[1;32m'
@@ -145,5 +131,8 @@ if [ -f '/home/dzmitry/apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/hom
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 export PATH="$HOME/.local/bin:$PATH"
+
+source ~/.config/scripts/completion.zsh
+source ~/.config/scripts/key-bindings.zsh
 
 eval "$(hub alias -s)"
