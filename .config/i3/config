@@ -65,7 +65,7 @@ bindsym $mod+d exec rofi -show run -theme solarized_alternate
 
 # execute and focus or just focus if executed
 bindsym $mod+XF86AudioMute exec --no-startup-id firefox
-bindsym $mod+XF86AudioLowerVolume exec --no-startup-id pycharm-professional
+bindsym $mod+XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/jetbrains-pycharm
 bindsym Print exec "flameshot gui"
 
 bindsym Shift+Print exec flameshot full -c -p ~/Pictures/

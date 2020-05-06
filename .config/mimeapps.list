@@ -14,6 +14,7 @@ x-scheme-handler/tg=telegramdesktop.desktop
 x-scheme-handler/mailto=mail.desktop;
 x-scheme-handler/magnet=torrent.desktop;
 inode/directory=file.desktop
+x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
 
 [Added Associations]
 application/x-shellscript=code-oss.desktop;

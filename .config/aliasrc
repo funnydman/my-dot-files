@@ -170,6 +170,8 @@ alias svenv='source venv/bin/activate'
 alias penv='pipenv'
 alias lzd='lazydocker'
 
+alias gcob='git checkout $(git branch | fzf)'
+
 # https://github.com/python-poetry/poetry/issues/536#issuecomment-498308796
 #alias poetry="python3 $HOME/.poetry/bin/poetry"
 

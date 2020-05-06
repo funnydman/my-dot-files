@@ -11,22 +11,19 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tpope/vim-fugitive'
 Plugin 'ryanoasis/vim-devicons'
-Plugin 'dracula/vim', {'name': 'dracula'}
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary' " for easy commenting -gc
 Plugin 'mboughaba/i3config.vim' " syntax highlighting for i3 config file
 Plugin 'vim-airline/vim-airline' " for pretty bar
-Plugin 'vim-airline/vim-airline-themes'
 Plugin 'jreybert/vimagit' " git operations in few key press
 Plugin 'scrooloose/nerdtree'
-Plugin 'vimwiki/vimwiki'
 Plugin 'mbbill/undotree'
 Plugin 'universal-ctags/ctags'
 Plugin 'morhetz/gruvbox'
-Plugin 'arakashic/chromatica.nvim'
+" Plugin 'arakashic/chromatica.nvim'
 Plugin 'junegunn/fzf.vim'
-Plugin 'sheerun/vim-polyglot'
-Plugin 'joshdick/onedark.vim'
+" Plugin 'sheerun/vim-polyglot'
+" Plugin 'joshdick/onedark.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -40,20 +37,15 @@ set incsearch
 set path+=**
 command! MakeTags !ctags -R .
 
-:map <F11>  :sp tags<CR>:%s/^\([^   :]*:\)\=\([^    ]*\).*/syntax keyword Tag \2/<CR>:wq! tags.vim<CR>/^<CR><F12>
-:map <F12>  :so tags.vim<CR>
-
 " adds fancy colors, for eyes
 syntax on
-" colorscheme dracula
+" colorscheme gruvbox
 
 " Enable autocompletion:
 set wildmode=longest,list,full
 
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-" Spell-check set to <leader>o, 'o' for 'orthography':
-map <leader>o :setlocal spell! spelllang=en_us<CR>
 
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 set splitbelow splitright
@@ -126,9 +118,6 @@ ino <Up> <Nop>
 ino <Down> <Nop>
 ino <Left> <Nop>
 ino <Right> <Nop>
-" let g:airline_powerline_fonts = 1
-" for browsing files
-nmap bo :browse oldfiles<CR>
 
 hi Normal guibg=NONE ctermbg=NONE
 
