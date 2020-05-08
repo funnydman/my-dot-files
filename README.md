@@ -3,3 +3,6 @@
 
 fzf talk
 https://www.youtube.com/watch?v=aXPQTesFdTI
+
+
+coolish vim stuff
