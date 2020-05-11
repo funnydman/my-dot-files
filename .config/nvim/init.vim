@@ -10,7 +10,6 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'tpope/vim-fugitive'
-Plugin 'ryanoasis/vim-devicons'
 Plugin 'tpope/vim-surround'
 Plugin 'tpope/vim-commentary' " for easy commenting -gc
 Plugin 'mboughaba/i3config.vim' " syntax highlighting for i3 config file
@@ -20,10 +19,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'mbbill/undotree'
 Plugin 'universal-ctags/ctags'
 Plugin 'morhetz/gruvbox'
-" Plugin 'arakashic/chromatica.nvim'
 Plugin 'junegunn/fzf.vim'
-" Plugin 'sheerun/vim-polyglot'
-" Plugin 'joshdick/onedark.vim'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -35,6 +31,7 @@ set number relativenumber
 " searching
 set incsearch
 set path+=**
+set inccommand=nosplit
 command! MakeTags !ctags -R .
 
 " adds fancy colors, for eyes
@@ -50,8 +47,8 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 " Splits open at the bottom and right, which is non-retarded, unlike vim defaults.
 set splitbelow splitright
 " Nerd tree
-map <leader>n :NERDTreeToggle<CR>
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
+" map <leader>n :NERDTreeToggle<CR>
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
@@ -63,9 +60,6 @@ map <C-l> <C-w>l
 set shiftround
 " Set auto indent spacing.
 set shiftwidth=2
-
-" Replace ex mode with gq
-map Q gq
 
 " Save file as sudo on files that require root permission
 cnoremap w!! execute 'silent! write !sudo tee % >/dev/null' <bar> edit!

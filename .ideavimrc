@@ -32,6 +32,7 @@ set ideastatusicon=gray
 map <leader>f <Plug>(easymotion-s)
 map <leader>e <Plug>(easymotion-f)
 
+"" Debugging/running
 map <leader>d :action Debug<CR>
 map <leader>r :action Run<CR>
 map <leader>c :action Stop<CR>
@@ -47,7 +48,7 @@ map <leader>o :action FileStructurePopup<CR>
 nmap <Leader>e  :action SearchEverywhere<CR>
 
 map <leader>a ggVG
-map <leader>ga :action FindAction<CR>
+map <leader>ga :action GotoAction<CR>
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
