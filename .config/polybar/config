@@ -74,10 +74,9 @@ font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 modules-left = i3 xwindow
 modules-center = date
 ;modules-right = arrow1 networkspeedup networkspeeddown arrow2 backlight arrow2 date
-modules-right = xkeyboard networkspeedup networkspeeddown wireless-network backlight alsa battery sep
+modules-right = xkeyboard networkspeedup networkspeeddown wireless-network backlight alsa battery
 
 separator = " | "
-; temp
 
 dim-value = 1.0
 
@@ -168,12 +167,9 @@ fuzzy-match = false
 
 ;extra icons to choose from
 ;http://fontawesome.io/cheatsheet/
-;       v     
-
+;       v    
 ws-icon-0 = 1;
-; ws-icon-0 = 1;
-ws-icon-1 = 2;
-;ws-icon-1 = 2;
+ws-icon-1 = 2;
 ws-icon-2 = 3;
 ; ws-icon-2 = 3;
 ws-icon-3 = 4;
@@ -184,7 +180,6 @@ ws-icon-7 = 8;
 ws-icon-8 = 9;
 ws-icon-9 = 10;
 ws-icon-default = " "
-
 ; Available tags:
 ;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
 ;   <label-mode> (default)
@@ -239,51 +234,6 @@ label-urgent-padding = 2
 
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-
-
-################################################################################
-############                       MODULES ARROWS                     ############
-################################################################################
-
-
-[module/sep]
-; grey to Blue
-type = custom/text
-content = " "
-content-background = ${colors.background}
-
-[module/arrow1]
-; grey to Blue
-type = custom/text
-content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = #A77AC4
-content-background = #292d3e
-
-[module/arrow2]
-; grey to Blue
-type = custom/text
-content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = #7197E7
-content-background = #A77AC4
-
-[module/arrow3]
-; grey to Blue
-type = custom/text
-content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = #A77AC4
-content-background = #7197E7
-
-
-[module/arrow4]
-; grey to Blue
-type = custom/text
-content = "%{T2} %{T-}"
-content-font = 2
-content-foreground = #7AB4C4
-content-background = #7197E7
 
 ################################################################################
 ############                       Custom MODULES                   ############
@@ -365,18 +315,6 @@ animation-charging-framerate = 750
 
 ################################################################################
 
-[module/compton]
-;https://github.com/jaagr/polybar/wiki/User-contributed-modules#compton
-type = custom/script
-exec = ~/.config/polybar/scripts/compton.sh
-click-left = ~/.config/polybar/scripts/compton-toggle.sh
-interval = 5
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-;format-underline = #00AF02
-
-################################################################################
-
 [module/date]
 ;https://github.com/jaagr/polybar/wiki/Module:-date
 type = internal/date
@@ -394,56 +332,6 @@ format-background = ${colors.background}
 label = "%date%, %time%"
 
 #################################################################
-
-[module/ewmh]
-type = internal/xworkspaces
-
-pin-workspaces = false
-enable-click = true
-enable-scroll = true
-reverse-scroll = true
-
-;extra icons to choose from
-;http://fontawesome.io/cheatsheet/
-;       v     
-
-icon-0 = 1;
-icon-1 = 2;
-icon-2 = 3;
-icon-3 = 4;
-icon-4 = 5;
-icon-5 = 6;
-icon-6 = 7;
-icon-7 = 8;
-#icon-8 = 9;
-#icon-9 = 10;
-#icon-default = " "
-format = <label-state>
-label-monitor = %name%
-
-label-active = %name%
-label-active-foreground = ${colors.foreground}
-label-active-background = ${colors.background}
-label-active-underline= #6790eb
-label-active-padding = 1
-
-label-occupied = %name%
-label-occupied-background = ${colors.background}
-label-occupied-padding = 1
-
-label-urgent = %name%
-label-urgent-foreground = ${colors.foreground}
-label-urgent-background = ${colors.alert}
-label-urgent-underline = ${colors.alert}
-label-urgent-padding = 1
-
-label-empty = %name%
-label-empty-foreground = ${colors.foreground}
-label-empty-padding = 1
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
-
-################################################################################
 
 [module/networkspeedup]
 ;https://github.com/jaagr/polybar/wiki/Module:-network
@@ -577,36 +465,6 @@ label-maxlen = 50
 format-prefix = "  "
 format-foreground = ${colors.foreground}
 format-background = ${colors.background}
-
-###############################################################################
-
-[module/powermenu]
-type = custom/menu
-expand-right = true
-
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
-menu-0-1 = shutdown
-menu-0-1-exec = menu-open-2
-
-menu-1-0 = back
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = systemctl reboot
-
-menu-2-0 = shutdown
-menu-2-0-exec = systemctl poweroff
-menu-2-1 = back
-menu-2-1-exec = menu-open-0
-format-spacing = 1
-format-background = ${colors.background}
-format-foreground = ${colors.foreground}
-format-padding = 1
-
-label-open = 
-label-close = 
-label-separator = |
-
 
 ##############################################################################
 [module/alsa]

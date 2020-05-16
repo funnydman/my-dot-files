@@ -20,7 +20,7 @@ Plugin 'mbbill/undotree'
 Plugin 'universal-ctags/ctags'
 Plugin 'morhetz/gruvbox'
 Plugin 'junegunn/fzf.vim'
-Plugin 'numirias/semshi'
+" Plugin 'numirias/semshi'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -113,3 +113,4 @@ ino <Right> <Nop>
 hi Normal guibg=NONE ctermbg=NONE
 
 set showmode
+command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)

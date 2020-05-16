@@ -114,6 +114,7 @@ fzf-history-widget() {
 }
 zle     -N   fzf-history-widget
 bindkey '^R' fzf-history-widget
+bindkey -M vicmd 'gr' fzf-history-widget
 
 } always {
   eval $__fzf_key_bindings_options

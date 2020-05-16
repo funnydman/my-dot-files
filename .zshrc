@@ -38,6 +38,7 @@ PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[mag
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 PATH=$PATH:$HOME/.config/scripts
+
 autoload -U compinit
 zstyle ':completion:*' menu select
 zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
@@ -58,17 +59,6 @@ HISTSIZE=10000
 SAVEHIST=10000
 setopt appendhistory
 
-#setopt SHARE_HISTORY
-# INC_APPEND_HISTORY_TIME
-
-# setopt    appendhistory     #Append history to the history file (no overwriting)
-# setopt    sharehistory      #Share history across terminals
-# setopt    incappendhistory  #Immediately append to the history file, not just when a term is killed
-
-# Appends every command to the history file once it is executed
-# setopt inc_append_history
-
-# Appends every command to the history file once it is executed
 setopt inc_append_history
 # Reloads the history whenever you use it
 setopt share_history
@@ -82,6 +72,7 @@ bindkey -M menuselect 'k' vi-up-line-or-history
 bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
+bindkey -M vicmd 'gr' vi-forward-char
 
 export KEYTIMEOUT=1
 
@@ -136,3 +127,4 @@ source ~/.config/scripts/completion.zsh
 source ~/.config/scripts/key-bindings.zsh
 
 eval "$(hub alias -s)"
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
