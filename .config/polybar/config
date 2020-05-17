@@ -53,10 +53,6 @@ line-size = 2
 line-color = #000000
 
 border-size = 0
-;border-left-size = 25
-;border-right-size = 25
-;border-top-size = 0
-;border-bottom-size = 25
 border-color = #000000
 
 padding-left = 1
@@ -74,7 +70,7 @@ font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 modules-left = i3 xwindow
 modules-center = date
 ;modules-right = arrow1 networkspeedup networkspeeddown arrow2 backlight arrow2 date
-modules-right = xkeyboard networkspeedup networkspeeddown wireless-network backlight alsa battery
+modules-right = xkeyboard networkspeedup networkspeeddown wireless-network backlight pulseaudio battery
 
 separator = " | "
 
@@ -171,7 +167,6 @@ fuzzy-match = false
 ws-icon-0 = 1;
 ws-icon-1 = 2;
 ws-icon-2 = 3;
-; ws-icon-2 = 3;
 ws-icon-3 = 4;
 ws-icon-4 = 5;
 ws-icon-5 = 6;
@@ -467,8 +462,18 @@ format-foreground = ${colors.foreground}
 format-background = ${colors.background}
 
 ##############################################################################
-[module/alsa]
-type = internal/alsa
+[module/pulseaudio]
+type = internal/pulseaudio
+
+; Sink to be used, if it exists (find using `pacmd list-sinks`, name field)
+; If not, uses default sink
+
+; Use PA_VOLUME_UI_MAX (~153%) if true, or PA_VOLUME_NORM (100%) if false
+; Default: true
+use-ui-max = true
+; Interval for volume increase/decrease (in percent points)
+; Default: 5
+interval = 5
 
 format-volume = <ramp-volume> <label-volume>
 format-volume-background = ${colors.background}
@@ -487,7 +492,5 @@ ramp-volume-1 = 
 ramp-volume-2 = 
 ramp-volume-3 = 
 ramp-volume-4 = 
-
-
 # vim:ft=dosini
 

@@ -1,43 +1,16 @@
-# git_branch() {
-#  # get git branch name
-#  echo $(git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/')
-# }
-
 setopt prompt_subst
-# allow command substitution inside the prompt
-# function to return current branch name while suppressing errors.
-# function git_branch() {
-#     branch=$(git symbolic-ref HEAD 2> /dev/null | awk 'BEGIN{FS="/"} {print $NF}')
-#     if [[ $branch == "" ]]; then
-#         :
-#     else
-#         echo ' (' $branch ') '
-#     fi
-# }
-
-
-# autoload -Uz vcs_info
-# precmd() { vcs_info }
-
-# # Format the vcs_info_msg_0_ variable
-# zstyle ':vcs_info:git:*' formats 'on branch %b'
-
-# # Set up the prompt (with git branch name)
-# setopt PROMPT_SUBST
-# PROMPT='%n in ${PWD/#$HOME/~} ${vcs_info_msg_0_} > '
-#setopt PROMPT_SUBST
 autoload -U colors && colors
+
+export PATH=$PATH:$HOME/.config/scripts
+export PATH="$HOME/.local/bin:$PATH"
+
 PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-
-
-#PROMPT='%~ $(git_branch) >'     # set the prompt value
 
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
-PATH=$PATH:$HOME/.config/scripts
 
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -102,7 +75,7 @@ echo -ne '\e[5 q'
 # Use beam shape cursor for each new prompt.
 preexec() { echo -ne '\e[5 q' ;}
 
-# # Use lf to switch directories and bind it to ctrl-o
+# Use fzf to switch directories and bind it to ctrl-o
 bindkey -s '^o' 'vim -o $(fzf)\n'  # zsh
 
 export LESS_TERMCAP_mb=$'\e[1;32m'
@@ -121,10 +94,10 @@ if [ -f '/home/dzmitry/apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/hom
 
 # Load zsh-syntax-highlighting; should be last.
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
-export PATH="$HOME/.local/bin:$PATH"
 
 source ~/.config/scripts/completion.zsh
 source ~/.config/scripts/key-bindings.zsh
 
 eval "$(hub alias -s)"
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+# source /home/dzmitry/apps/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
