@@ -478,19 +478,18 @@ interval = 5
 format-volume = <ramp-volume> <label-volume>
 format-volume-background = ${colors.background}
 format-volume-foreground = ${colors.foreground}
-format-volume-padding = 1
+format-volume-padding = 0
 
 label-volume = %percentage%%
 
-format-muted-prefix = 
+format-muted-prefix = "婢 "
 format-muted-background = ${colors.background}
 format-muted-foreground = ${colors.foreground}
-format-muted-padding = 1
+format-muted-padding = 0
 
-ramp-volume-0 = 
+ramp-volume-0 = 
 ramp-volume-1 = 
-ramp-volume-2 = 
+ramp-volume-2 = 墳
 ramp-volume-3 = 
-ramp-volume-4 = 
 # vim:ft=dosini
 
