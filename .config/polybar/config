@@ -78,8 +78,8 @@ dim-value = 1.0
 
 tray-position = right
 tray-detached = false
-tray-maxsize = 20
 tray-background = ${colors.background}
+tray-maxsize = 18
 tray-offset-x = 0
 tray-offset-y = 0
 tray-padding = 4
@@ -115,8 +115,6 @@ cursor-scroll =
 
 ################################################################################
 ############                       MODULE I3                        ############
-################################################################################
-
 [module/i3]
 ;https://github.com/jaagr/polybar/wiki/Module:-i3
 type = internal/i3
