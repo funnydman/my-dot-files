@@ -253,13 +253,6 @@ format-background = ${colors.background}
 ;   %percentage% (default)
 label =  %percentage%%
 
-; Only applies if <ramp> is used
-ramp-0 = 🌕
-ramp-1 = 🌔
-ramp-2 = 🌓
-ramp-3 = 🌒
-ramp-4 = 🌑
-
 ; Only applies if <bar> is used
 bar-width = 10
 bar-indicator = |
@@ -353,7 +346,7 @@ interface = wlp82s0
 ;interface = enp4s0
 label-connected = "%downspeed:7%"
 format-connected = <label-connected>
-format-connected-prefix = "  "
+format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.text-color}
 format-connected-foreground = ${colors.text-color}
 format-connected-background = ${colors.background}
@@ -371,7 +364,7 @@ format-connected = <label-connected>
 ;format-connected = <ramp-signal> <label-connected>
 format-connected-foreground = ${colors.foreground}
 format-connected-background = ${colors.background}
-format-connected-prefix = "  "
+format-connected-prefix = " "
 format-connected-prefix-foreground = #7e52c6
 format-connected-prefix-background = ${colors.background}
 ;format-connected-underline = #7e52c6
@@ -384,7 +377,7 @@ label-disconnected-background = ${colors.background}
 format-disconnected = <label-disconnected>
 format-disconnected-foreground = ${colors.alert}
 format-disconnected-background = ${colors.background}
-format-disconnected-prefix = "  "
+format-disconnected-prefix = " "
 format-disconnected-prefix-foreground = ${colors.alert}
 format-disconnected-prefix-background = ${colors.background}
 ;format-disconnected-underline =${colors.alert}
@@ -398,31 +391,6 @@ ramp-signal-5 = ▆
 ramp-signal-6 = ▇
 ramp-signal-7 = █
 ramp-signal-foreground = #7e52c6
-
-################################################################################
-
-[module/xbacklight]
-;https://github.com/jaagr/polybar/wiki/Module:-xbacklight
-type = internal/xbacklight
-format = <label> <bar>
-format-prefix = "   "
-format-prefix-foreground = ${colors.foreground}
-format-prefix-background = ${colors.background}
-format-prefix-underline = #9f78e1
-format-underline = #9f78e1
-label = %percentage%%
-bar-width = 10
-bar-indicator = 
-bar-indicator-foreground = #fff
-bar-indicator-font = 2
-bar-fill = 
-bar-fill-font = 2
-bar-fill-foreground = #9f78e1
-bar-empty = 
-bar-empty-font = 2
-bar-empty-foreground = #fff
-format-foreground = ${colors.foreground}
-format-background = ${colors.background}
 
 ################################################################################
 
@@ -440,7 +408,7 @@ format-background = ${colors.background}
 
 label-layout = %layout%
 ;label-layout-underline = #3ecfb2
-label-indicator-padding = 2
+label-indicator-padding = 1
 label-indicator-margin = 1
 label-indicator-background = ${colors.background}
 label-indicator-underline = ${colors.foreground}
