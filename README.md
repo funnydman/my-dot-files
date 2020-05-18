@@ -1,5 +1,8 @@
 # my-dot-files
 
+### How this looks: https://imgur.com/a/aRBWb38
+
+
 SDDM theme https://github.com/funnydman/blade-runner-theme (blade runner theme)
 
 fzf talk
