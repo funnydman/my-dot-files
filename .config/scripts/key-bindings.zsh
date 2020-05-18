@@ -94,7 +94,9 @@ fzf-cd-widget() {
   return $ret
 }
 zle     -N    fzf-cd-widget
-bindkey '\ec' fzf-cd-widget
+# bindkey '\ec' fzf-cd-widget
+# go to directory
+bindkey -M vicmd 'gd' fzf-cd-widget
 
 # CTRL-R - Paste the selected command from history into the command line
 fzf-history-widget() {
@@ -112,11 +114,29 @@ fzf-history-widget() {
   zle reset-prompt
   return $ret
 }
+
 zle     -N   fzf-history-widget
 bindkey '^R' fzf-history-widget
 bindkey -M vicmd 'gr' fzf-history-widget
+
+fzf-vim-widget() {
+    local ed=${EDITOR:-vim}
+    local fname="$(__fsel)"
+
+    local fname_no_whitespace="$(echo -e "${fname}" | tr -d '[:space:]')"
+
+    BUFFER="${ed} ${fname_no_whitespace}"
+    zle accept-line "$@"
+}
+
+zle     -N   fzf-vim-widget
+bindkey -M vicmd 'gf' fzf-vim-widget
 
 } always {
   eval $__fzf_key_bindings_options
   'unset' '__fzf_key_bindings_options'
 }
+
+
+
+

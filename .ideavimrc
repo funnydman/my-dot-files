@@ -49,6 +49,8 @@ nmap <Leader>e :action SearchEverywhere<CR>
 
 map <leader>a ggVG
 map <leader>ga :action GotoAction<CR>
+map <leader>go :action OpenFile<CR>
+
 map = :action ReformatCode<CR>
 
 " Shortcutting split navigation, saving a keypress:
