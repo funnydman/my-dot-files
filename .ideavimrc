@@ -45,10 +45,11 @@ map <leader>h :action Vcs.ShowTabbedFileHistory<CR>
 map <leader>b :action ToggleLineBreakpoint<CR>
 map <leader>o :action FileStructurePopup<CR>
 
-nmap <Leader>e  :action SearchEverywhere<CR>
+nmap <Leader>e :action SearchEverywhere<CR>
 
 map <leader>a ggVG
 map <leader>ga :action GotoAction<CR>
+map = :action ReformatCode<CR>
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
