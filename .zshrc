@@ -98,5 +98,4 @@ source ~/.config/scripts/completion.zsh
 source ~/.config/scripts/key-bindings.zsh
 
 eval "$(hub alias -s)"
-export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
-# source /home/dzmitry/apps/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+# export FZF_DEFAULT_COMMAND='rg --files --no-ignore --follow --glob "!.git/*"'
