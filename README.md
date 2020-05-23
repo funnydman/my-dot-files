@@ -3,7 +3,12 @@
 ### How this looks: https://imgur.com/a/aRBWb38
 
 
-## Firefox extensions 
+## Firefox 
+
+### theme
+Matte Black (Blue)- https://addons.mozilla.org/en-US/firefox/addon/matte-black-blue/
+
+### extensions
 * vimium
 * adblock
 * pocket
