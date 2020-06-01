@@ -24,7 +24,9 @@ bindsym $mod+n border normal
 floating_modifier $mod
 
 # Use pactl to adjust volume in PulseAudio.
+
 bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/scripts/volume.sh +5% # control max value
+# bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% # control max value
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
@@ -58,7 +60,7 @@ exec --no-startup-id flameshot
 bindsym $mod+Return exec st
 
 # kill focused window
-bindsym $mod+Shift+q kill
+bindsym $mod+q kill
 
 # start rofi (a program launcher)
 bindsym $mod+d exec rofi -show run -theme solarized_alternate
@@ -113,7 +115,7 @@ bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_
 # split orientation
 bindsym $mod+z split h;exec notify-send 'tile horizontally'
 bindsym $mod+v split v;exec notify-send 'tile vertically'
-bindsym $mod+q split toggle;exec notify-send 'toggle'
+bindsym $mod+Shift+q split toggle;exec notify-send 'toggle'
 
 # split in horizontal orientation
 #bindsym $mod+h split h

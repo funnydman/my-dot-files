@@ -1,4 +1,7 @@
-st.font:	Liberation Mono:pixelsize=14:antialias=true:autohint=true;
+/* st.font:	Liberation Mono:pixelsize=14:antialias=true:autohint=true; */
+/* st.font:	Bitstream Vera Sans Mono:style=Roman:pixelsize=14:antialias=true:autohint=true; */
+
+st.font:	Hack:pixelsize=14:antialias=true:autohint=true;
 /* name		dark	light */
 /* black	0	8 */
 /* red		1	9 */
