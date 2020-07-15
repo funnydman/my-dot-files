@@ -16,6 +16,7 @@ x-scheme-handler/magnet=torrent.desktop;
 inode/directory=file.desktop
 x-scheme-handler/jetbrains=jetbrains-toolbox.desktop
 x-scheme-handler/postman=Postman.desktop
+x-scheme-handler/viber=viber.desktop
 
 [Added Associations]
 application/x-shellscript=code-oss.desktop;

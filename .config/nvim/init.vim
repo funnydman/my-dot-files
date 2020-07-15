@@ -114,3 +114,19 @@ hi Normal guibg=NONE ctermbg=NONE
 
 set showmode
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
+
+
+
+
+
+
+
+
+
+
+
+
+" nnoremap <C-p> :Files<CR>
+" nnoremap <C-o> :Buffers<CR>
+" nnoremap <C-g> :GFiles<CR>
+" nnoremap <C-f> :Rg

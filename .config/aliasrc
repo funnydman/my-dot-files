@@ -153,6 +153,12 @@ __get_entry_name() {
 
 alias kcc=__get_entry_name
 
+mem()
+{
+    ps -eo rss,pid,euser,args:100 --sort %mem | grep -v grep | grep -i $@ | awk '{printf $1/1024 "MB"; $1=""; print }'
+}
+alias mem=mem
+
 # changing directories
 alias ..='cd ..'
 alias ...='cd ../../'
