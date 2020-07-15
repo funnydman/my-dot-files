@@ -2,6 +2,9 @@
 
 ### How this looks: https://imgur.com/a/aRBWb38
 
+### Terminal 
+
+st (fork) https://github.com/funnydman/myst
 
 ## Firefox 
 
