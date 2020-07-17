@@ -1,8 +1,7 @@
-#!/bin/sh
+#!/bin/bash
 
 # Only exported variables can be used within the timer's command.
 export PRIMARY_DISPLAY="$(xrandr | awk '/ primary/{print $1}')"
-
 
 # Run xidlehook
 xidlehook \
@@ -14,11 +13,9 @@ xidlehook \
   --timer 600 \
     'xrandr --output "$PRIMARY_DISPLAY" --brightness .1' \
     'xrandr --output "$PRIMARY_DISPLAY" --brightness 1' \
-    'pactl set-sink-mute @DEFAULT_SINK@ toggle' \
-    'xkb-switch -s us' \
   `# Undim & lock after 10 more seconds` \
   --timer 100 \
-    'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; i3lock-fancy' \
+    'xrandr --output "$PRIMARY_DISPLAY" --brightness 1; i3lock' \
     '' \
   `# Finally, suspend an hour after it locks` \
   --timer 3600 \

@@ -47,7 +47,7 @@ bindsym $mod + XF86MonBrightnessDown exec brightnessctl --device='tpacpi::kbd_ba
 # startup applications
 exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpapers/wall.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
-exec_always --no-startup-id $HOME/.config/xidlelock.sh
+exec_always --no-startup-id $HOME/.config/scripts/xidlelock.sh
 exec_always --no-startup-id dunst
 
 # for shadows stuff and etc
