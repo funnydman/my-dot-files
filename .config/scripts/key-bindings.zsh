@@ -1,4 +1,4 @@
-#     ____      ____
+
 #    / __/___  / __/
 #   / /_/_  / / /_
 #  / __/ / /_/ __/
@@ -123,10 +123,18 @@ fzf-vim-widget() {
     local ed=${EDITOR:-vim}
     local fname="$(__fsel)"
 
-    local fname_no_whitespace="$(echo -e "${fname}" | tr -d '[:space:]')"
+    local ret=$?
 
-    BUFFER="${ed} ${fname_no_whitespace}"
-    zle accept-line "$@"
+    if [ -n "$fname" ]; then
+        BUFFER="${ed} ${fname}"
+        if [ -n "$BUFFER" ]; then
+        zle accept-line "$@"
+        fi
+    fi
+
+    zle reset-prompt
+    return $ret
+
 }
 
 zle     -N   fzf-vim-widget
