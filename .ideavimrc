@@ -29,8 +29,9 @@ set ideajoin
 set ideastatusicon=gray
 
 "" My Mappings -----------------------------
-map <leader>f <Plug>(easymotion-s)
-map <leader>e <Plug>(easymotion-f)
+
+" map <leader>f <Plug>(easymotion-s)
+" map <leader>e <Plug>(easymotion-f)
 
 "" Debugging/running
 map <leader>d :action Debug<CR>
