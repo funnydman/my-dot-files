@@ -46,6 +46,8 @@ bindkey -M menuselect 'l' vi-forward-char
 bindkey -M menuselect 'j' vi-down-line-or-history
 bindkey -v '^?' backward-delete-char
 
+bindkey -v
+
 export KEYTIMEOUT=1
 
 # Change cursor shape for different vi modes.
@@ -60,14 +62,15 @@ function zle-keymap-select {
        [[ $1 = 'beam' ]]; then
     echo -ne '\e[5 q'
   fi
+    zle reset-prompt
 }
 zle -N zle-keymap-select
 
-zle-line-init() {
-    zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
-    echo -ne "\e[5 q"
-}
-zle -N zle-line-init
+# zle-line-init() {
+#     zle -K viins # initiate `vi insert` as keymap (can be removed if `bindkey -V` has been set elsewhere)
+#     echo -ne "\e[5 q"
+# }
+# zle -N zle-line-init
 
 # Use beam shape cursor on startup.
 echo -ne '\e[5 q'
