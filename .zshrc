@@ -102,3 +102,4 @@ source ~/.config/scripts/key-bindings.zsh
 
 eval "$(hub alias -s)"
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --follow --glob "!.git/*"'
+export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"

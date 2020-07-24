@@ -1,7 +1,9 @@
 #!/bin/sh
 setxkbmap -option caps:escape
 setxkbmap us,ru -option 'grp:alt_shift_toggle'
-xinput --set-prop 12 'libinput Accel Speed' 0.6 # make persistent \ xinput --list-prop
+# make persistent \ xinput --list-prop
+# xinput --set-prop 12 'libinput Accel Speed' 0.6
+xinput --set-prop 'SynPS/2 Synaptics TouchPad' 'libinput Accel Speed' 0.9
 # Disable middle click
 xmodmap -e "pointer = 1 25 3 4 5 6 7 8 9"
 # unset keyboard highlighting
