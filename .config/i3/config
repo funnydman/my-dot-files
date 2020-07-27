@@ -31,11 +31,13 @@ bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-bindsym $mod+s exec --no-startup-id $HOME/.config/scripts/switcher.py --name Skype
 
 # too much social stuff!
-bindsym $mod+t exec --no-startup-id $HOME/.config/scripts/switcher.py --name TelegramDesktop
+# bindsym $mod+t exec --no-startup-id $HOME/.config/scripts/switcher.py --name TelegramDesktop
+# bindsym $mod+s exec --no-startup-id $HOME/.config/scripts/switcher.py --name Skype
 
+bindsym XF86Bluetooth exec --no-startup-id $HOME/.config/scripts/switcher.py --name Skype
+bindsym XF86Tools exec --no-startup-id $HOME/.config/scripts/switcher.py --name TelegramDesktop
 
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 5
@@ -64,7 +66,7 @@ bindsym $mod+Return exec st
 bindsym $mod+q kill
 
 # start rofi (a program launcher)
-bindsym $mod+d exec rofi -show run -theme solarized_alternate
+bindsym $mod+d exec $HOME/.config/scripts/run_rofi.sh
 
 # execute and focus or just focus if executed
 bindsym $mod+XF86AudioMute exec --no-startup-id firefox
