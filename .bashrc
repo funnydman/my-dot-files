@@ -4,12 +4,6 @@ case $- in
       *) return;;
 esac
 
-PATH="/home/dzmitry/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/dzmitry/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/dzmitry/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
-PERL_MB_OPT="--install_base \"/home/dzmitry/perl5\""; export PERL_MB_OPT;
-PERL_MM_OPT="INSTALL_BASE=/home/dzmitry/perl5"; export PERL_MM_OPT;
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -26,6 +20,7 @@ shopt -s histappend
 shopt -s cdspell
 shopt -s autocd #Allows you to cd into directory merely by typing the directory name.
 shopt -s dirspell
+
 stty -ixon # Disable ctrl-s and ctrl-q.
 
 export CDPATH=.:~
@@ -81,7 +76,7 @@ fi
 # Show git branch name
 
 parse_git_branch() {
- # get git branch name   
+ # get git branch name
  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/(\1)/'
 }
 
