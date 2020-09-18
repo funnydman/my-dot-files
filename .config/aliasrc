@@ -185,3 +185,5 @@ alias gcob='git checkout $(git branch | fzf)'
 alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
 alias gstaging='gcloud beta compute ssh --zone "us-central1-a" "dailypass-staging" --project "dailypass"'
 alias gprod='gcloud beta compute ssh --zone "asia-southeast1-b" "dailypass-production" --project "dailypass"'
+
+alias hdebug="helm install --dry-run --debug"

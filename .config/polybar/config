@@ -76,14 +76,14 @@ separator = " | "
 
 dim-value = 1.0
 
-tray-position = right
-tray-detached = false
-tray-background = ${colors.background}
-tray-maxsize = 18
-tray-offset-x = 0
-tray-offset-y = 0
-tray-padding = 4
-tray-scale = 1.0
+; tray-position = right
+; tray-detached = false
+; tray-background = ${colors.background}
+; tray-maxsize = 18
+; tray-offset-x = 0
+; tray-offset-y = 0
+; tray-padding = 4
+; tray-scale = 1.0
 
 #i3: Make the bar appear below windows
 ;wm-restack = i3

@@ -20,7 +20,8 @@ Plugin 'mbbill/undotree'
 Plugin 'universal-ctags/ctags'
 Plugin 'morhetz/gruvbox'
 Plugin 'junegunn/fzf.vim'
-" Plugin 'numirias/semshi'
+Plugin 'junegunn/vim-peekaboo'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required

@@ -36,8 +36,8 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 # bindsym $mod+t exec --no-startup-id $HOME/.config/scripts/switcher.py --name TelegramDesktop
 # bindsym $mod+s exec --no-startup-id $HOME/.config/scripts/switcher.py --name Skype
 
-bindsym XF86Bluetooth exec --no-startup-id $HOME/.config/scripts/switcher.py --name Skype
-bindsym XF86Tools exec --no-startup-id $HOME/.config/scripts/switcher.py --name TelegramDesktop
+bindsym XF86Tools exec --no-startup-id $HOME/.config/scripts/switcher.py --name Skype
+bindsym XF86Bluetooth exec --no-startup-id $HOME/.config/scripts/switcher.py --name TelegramDesktop
 
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 5
