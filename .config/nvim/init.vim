@@ -32,8 +32,15 @@ set clipboard=unnamedplus " for easy copy pasting
 set number relativenumber
 " searching
 set incsearch
+set hlsearch
 set path+=**
 set inccommand=nosplit
+
+" Clear highlighting on escape in normal mode
+nnoremap <esc> :noh<return><esc>
+" Is this line needed https://stackoverflow.com/a/1037182/9926721
+nnoremap <esc>^[ <esc>^[
+
 command! MakeTags !ctags -R .
 
 " adds fancy colors, for eyes

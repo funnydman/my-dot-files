@@ -16,17 +16,26 @@ set encoding=utf-8
 set showmode
 set so=5
 set incsearch
+set hlsearch
 set nu
 set ruler
 
 set clipboard=unnamedplus " for easy copy pasting
 set number relativenumber
-set incsearch
 set path+=**
+" Clear highlighting on escape in normal mode
+nnoremap <esc> :noh<return><esc>
+" Is this line needed https://stackoverflow.com/a/1037182/9926721
+nnoremap <esc>^[ <esc>^[
 
 """ Idea specific settings ------------------
 set ideajoin
 set ideastatusicon=gray
+" enabled by default
+
+ " Vim has 2 types of bookmarks. One is with lower case (like ma) and this is a file-scope bookmark. Another one is with upper case (like mA) and that is a project-scope bookmark.
+" IntelliJ IDEA has only one type of bookmarks - project scoped. So, the lower case bookmarks work as before and if you use upper case bookmarks you will get the gutter icon and all the stuff.
+set ideamarks
 
 "" My Mappings -----------------------------
 
@@ -54,6 +63,8 @@ map <leader>go :action OpenFile<CR>
 map <leader>gf :action FindInPath<CR>
 
 map = :action ReformatCode<CR>
+
+map <leader>gb :action Back<CR>
 
 " Shortcutting split navigation, saving a keypress:
 map <C-h> <C-w>h
