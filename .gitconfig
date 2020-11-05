@@ -9,3 +9,5 @@
 [user]
 	email = <>
 	name = Your Name
+[core]
+	autocrlf = input

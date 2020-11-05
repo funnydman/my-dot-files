@@ -69,7 +69,6 @@ font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = i3 xwindow
 modules-center = date
-;modules-right = arrow1 networkspeedup networkspeeddown arrow2 backlight arrow2 date
 modules-right = xkeyboard networkspeedup networkspeeddown wireless-network backlight pulseaudio battery
 
 separator = " | "
@@ -330,7 +329,9 @@ format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.text-color}
 format-connected-foreground = ${colors.text-color}
 format-connected-background = ${colors.background}
-ping-interval = 2
+format-disconnected-background = #ccc
+
+; ping-interval = 2
 ################################################################################
 
 [module/networkspeeddown]
@@ -347,7 +348,10 @@ format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.text-color}
 format-connected-foreground = ${colors.text-color}
 format-connected-background = ${colors.background}
-ping-interval = 2
+
+; leads to problem with connection state detection
+; (needs more testing)
+; ping-interval = 3
 ################################################################################
 
 [module/wireless-network]
