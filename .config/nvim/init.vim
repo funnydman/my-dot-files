@@ -20,8 +20,19 @@ Plugin 'mbbill/undotree'
 Plugin 'universal-ctags/ctags'
 Plugin 'morhetz/gruvbox'
 Plugin 'junegunn/fzf.vim'
+" Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
 Plugin 'junegunn/vim-peekaboo'
+Plugin 'lervag/vimtex'
+Plugin 'KeitaNakamura/tex-conceal.vim'
+Plugin 'sirver/ultisnips'
+Plugin 'tridactyl/vim-tridactyl'
+" https://castel.dev/post/lecture-notes-1/
 
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+let g:peekaboo_window='vert bo 60new'
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -45,7 +56,15 @@ command! MakeTags !ctags -R .
 
 " adds fancy colors, for eyes
 syntax on
-" colorscheme gruvbox
+
+set background=dark
+colorscheme gruvbox
+
+hi Normal ctermbg=NONE guibg=NONE
+hi Normal guibg=NONE ctermbg=NONE
+
+" highlight Normal ctermbg=Black
+" highlight NonText ctermbg=Black
 
 " Enable autocompletion:
 set wildmode=longest,list,full
@@ -118,21 +137,15 @@ ino <Down> <Nop>
 ino <Left> <Nop>
 ino <Right> <Nop>
 
-hi Normal guibg=NONE ctermbg=NONE
-
 set showmode
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
-
-
-
-
-
-
-
-
-
-
+" Make zathura default view and latex default tex flavor
+" let g:vimtex_view_method = 'zathura'
+let g:tex_flavor = 'latex'
+let g:vimtex_compiler_latexmk = {
+            \ 'build_dir' : 'build',
+            \}
 
 " nnoremap <C-p> :Files<CR>
 " nnoremap <C-o> :Buffers<CR>
