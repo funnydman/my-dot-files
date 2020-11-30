@@ -26,21 +26,33 @@ Plugin 'lervag/vimtex'
 Plugin 'KeitaNakamura/tex-conceal.vim'
 Plugin 'sirver/ultisnips'
 Plugin 'tridactyl/vim-tridactyl'
-" https://castel.dev/post/lecture-notes-1/
+" https://castel.dev/post/lecture-notes-1/ | haskell stuff
+Plugin 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
 
+" markdown
+Plugin 'godlygeek/tabular'
+Plugin 'plasticboy/vim-markdown'
+Plugin 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+
+" All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+
+" Plugin settings
 let g:UltiSnipsExpandTrigger = '<tab>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 let g:peekaboo_window='vert bo 60new'
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
+
 
 "  defaults
 set encoding=utf-8
 set clipboard=unnamedplus " for easy copy pasting
 set number relativenumber
+set mouse=a
+
 " searching
 set incsearch
 set hlsearch
@@ -49,6 +61,7 @@ set inccommand=nosplit
 
 " Clear highlighting on escape in normal mode
 nnoremap <esc> :noh<return><esc>
+
 " Is this line needed https://stackoverflow.com/a/1037182/9926721
 nnoremap <esc>^[ <esc>^[
 
@@ -119,7 +132,6 @@ set undodir=~/.vim/undodir
 set undofile
 
 highlight ColorColumn ctermbg=darkgray
-
 
 " filetype
 au FileType asm setlocal ft=nasm

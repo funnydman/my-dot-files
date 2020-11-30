@@ -30,11 +30,11 @@
 " NB: If you want "vim-like" behaviour where removing a line from
 " here makes the setting disappear, uncomment the line below.
 
-"sanitise tridactyllocal tridactylsync
+" sanitise tridactyllocal tridactylsync
 
-"
 " Binds
 "
+bind ZZ composite sanitise tridactyllocal; qall
 
 " Comment toggler for Reddit, Hacker News and Lobste.rs
 bind ;c hint -Jc [class*="expand"],[class="togg"],[class="comment_folder"]
@@ -60,8 +60,11 @@ bindurl wikiwand.com yy composite js document.location.href.replace("wikiwand.co
 bindurl reddit.com gu urlparent 4
 
 " Only hint search results on Google and DDG
-bindurl www.google.com f hint -Jc .rc > .r > a
-bindurl www.google.com F hint -Jbc .rc>.r>a
+bindurl www.google.com f hint -Jc .rc > div > a
+bindurl www.google.com F hint -Jbc .rc > div > a
+
+bindurl ^https://duckduckgo.com f hint -Jc [class=result__a]
+bindurl ^https://duckduckgo.com F hint -Jbc [class=result__a]
 
 " Allow Ctrl-a to select all in the commandline
 unbind --mode=ex <C-a>
@@ -91,6 +94,9 @@ set searchurls.julia https://www.google.com/search?q=site:http://docs.julialang.
 
 " set editorcmd to suckless terminal, or use the defaults on other platforms
 js tri.browserBg.runtime.getPlatformInfo().then(os=>{const editorcmd = os.os=="linux" ? "st vim" : "auto"; tri.config.set("editorcmd", editorcmd)})
+
+" set profile dir on Windows
+jsb browser.runtime.getPlatformInfo().then(os=>{const profiledir = os.os=="win" ? "C:\\Users\\olie\\AppData\\Roaming\\Mozilla\\Firefox\\Profiles\\gwm76nmk.default" : "auto"; tri.config.set("profiledir", profiledir)})
 
 " Sane hinting mode
 set hintfiltermode vimperator-reflow
@@ -141,7 +147,8 @@ command translate js let googleTranslateCallback = document.createElement('scrip
 "
 " URL redirects
 "
-""""
+
+" " New reddit is bad
 
 " Isolate Facebook in its own container
 " set auconcreatecontainer true
