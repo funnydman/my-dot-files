@@ -1,0 +1,15 @@
+#!/bin/bash
+
+git_name=$(git config user.name)
+
+if [[ $git_name == "" ]]; then
+    echo "Error: user.name is undefined. Use 'git config user.name \"Your Name\"' to set it."
+    exit 1
+fi
+
+git_email=$(git config user.email)
+
+if [[ $git_email == "<>" ]]; then
+    echo "Error: user.email is undefined. Use 'git config user.email you@example.com' to set it."
+    exit 1
+fi
