@@ -1,46 +1,58 @@
-setopt prompt_subst
 autoload -U colors && colors
 
-# Disable ctrl-s to freeze terminal.
-stty stop undef
 
+### General
 # allow comments in zsh shell
 setopt interactivecomments
-
-export PATH=$PATH:$HOME/.config/scripts
-export PATH="$HOME/.local/bin:$PATH"
-
-PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
-
-
-# Load aliases and shortcuts if existent.
-[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
-[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
-
-autoload -U compinit
-zstyle ':completion:*' menu select
-zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
-zmodload zsh/complist
-compinit
+# Disable ^S, ^Q, ^\
+setopt noflowcontrol
+stty -ixon quit undef
 
 setopt autocd
-# setopt correct
-# HISTIGNOREDUPS prevents the current line from being saved
-# in the history if it is the same as the previous one;
-# HISTIGNORESPACE prevents the current line from being saved if it begins with a space.
+setopt correct
+# Don't guess when slashes should be removed (too magic)
+setopt noautoremoveslash
+# Disable 'do you wish to see all %d possibilities'
+LISTMAX=999999
+
+### History
 setopt histignoredups
 setopt histignorespace
-
-# history settings
-HISTFILE=~/.zsh_history
-HISTSIZE=10000
-SAVEHIST=10000
-setopt appendhistory
-
+# Append immediately rather than only at exit
 setopt inc_append_history
-# Reloads the history whenever you use it
-setopt share_history
-# Include hidden files in autocomplete:
+setopt appendhistory
+# Store some metadata as well
+setopt extendedhistory
+
+# setopt share_history
+HISTFILE=~/.zsh_history
+HISTSIZE=40000
+SAVEHIST=40000
+ # Don't add these to the history file.
+HISTORY_IGNORE='([bf]g *|disown|cd ..|cd -)'
+
+### Completion
+autoload -U compinit && compinit && zmodload zsh/complist
+zstyle ':completion:*' completer _expand _complete _ignored
+
+zstyle ':completion:*' menu select
+zstyle ':completion:*' matcher-list '' 'm:{a-zA-Z}={A-Za-z}' 'r:|[._-]=* r:|=*' 'l:|=* r:|=*'
+# Always ignore these files/functions
+zstyle ':completion:*:*:*:*:*files' ignored-patterns '*?.pyc'
+
+# Show more info in some completions
+zstyle ':completion:*' verbose yes
+
+# Warn when there are no completions
+zstyle ':completion:*:warnings' format 'No completions'
+
+# # Show ls-like colours in file completion
+# zstyle ':completion:*:default' list-colors ${(s.:.)LS_COLORS}
+
+### Prompt
+# Expand parameters commands, and arithmetic in PROMPT
+setopt promptsubst
+PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[magenta]%}%~%{$fg[red]%}]%{$reset_color%}$%b "
 
 _comp_options+=(globdots)
 
@@ -102,6 +114,14 @@ if [ -f '/home/dzmitry/apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/hom
 
 source ~/.config/scripts/completion.zsh
 source ~/.config/scripts/key-bindings.zsh
+
+### Paths
+export PATH=$PATH:$HOME/.config/scripts
+export PATH="$HOME/.local/bin:$PATH"
+
+# Load aliases and shortcuts if existent.
+[ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
+[ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
 
 eval "$(hub alias -s)"
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --follow --glob "!.git/*"'
