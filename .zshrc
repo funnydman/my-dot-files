@@ -1,6 +1,12 @@
 setopt prompt_subst
 autoload -U colors && colors
 
+# Disable ctrl-s to freeze terminal.
+stty stop undef
+
+# allow comments in zsh shell
+setopt interactivecomments
+
 export PATH=$PATH:$HOME/.config/scripts
 export PATH="$HOME/.local/bin:$PATH"
 
@@ -10,7 +16,6 @@ PROMPT="%B%{$fg[red]%}[%{$fg[yellow]%}%n%{$fg[green]%}@%{$fg[blue]%}%M %{$fg[mag
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
 [ -f "$HOME/.config/aliasrc" ] && source "$HOME/.config/aliasrc"
-
 
 autoload -U compinit
 zstyle ':completion:*' menu select
@@ -94,8 +99,6 @@ if [ -f '/home/dzmitry/apps/google-cloud-sdk/path.zsh.inc' ]; then . '/home/dzmi
 # The next line enables shell command completion for gcloud.
 if [ -f '/home/dzmitry/apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/dzmitry/apps/google-cloud-sdk/completion.zsh.inc'; fi
 
-# Load zsh-syntax-highlighting; should be last.
-source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh 2>/dev/null
 
 source ~/.config/scripts/completion.zsh
 source ~/.config/scripts/key-bindings.zsh
@@ -105,3 +108,6 @@ eval "$(hub alias -s)"
 export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
+
+
+source /home/dzmitry/apps/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
