@@ -14,7 +14,6 @@ set number relativenumber
 set path+=**
 
 " Navigation
-
 nnoremap [m :action MethodUp<cr>
 nnoremap ]m :action MethodDown<cr>
 
@@ -40,15 +39,14 @@ set idearefactormode=keep
 " IntelliJ IDEA has only one type of bookmarks - project scoped. So, the lower case bookmarks work as before and if you use upper case bookmarks you will get the gutter icon and all the stuff.
 set ideamarks
 
-
 "" Debugging/running
 map <leader>d :action Debug<CR>
 map <leader>r :action Run<CR>
 map <leader>c :action Stop<CR>
 map <leader>b :action ToggleLineBreakpoint<CR>
-map <leader>j :action StepInto<CR>
-map <leader>k :action StepOut<CR>
-
+map <leader>n :action StepInto<CR>
+map <leader>p :action StepOut<CR>
+" IdeaVim.ReloadVimRc.reload
 
 "" Idea navigation
 map <leader>s :action SelectInProjectView<CR>
@@ -63,7 +61,6 @@ map <leader>go :action OpenFile<CR>
 map <leader>gf :action FindInPath<CR>
 
 map = :action ReformatCode<CR>
-
 map <leader>gb :action Back<CR>
 
 nnoremap <leader>g  :action Generate<CR>
@@ -74,18 +71,6 @@ map <C-h> <C-w>h
 map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-l> <C-w>l
-
-" Disable arrows usage
-noremap <silent> <Up> <Nop>
-noremap <silent> <Down> <Nop>
-noremap <silent> <Left> <Nop>
-noremap <silent> <Right> <Nop>
-
-" Disable arrow keys in Insert mode
-ino <Up> <Nop>
-ino <Down> <Nop>
-ino <Left> <Nop>
-ino <Right> <Nop>
 
 """ Plugins  --------------------------------
 set surround
@@ -99,3 +84,16 @@ Plug 'machakann/vim-highlightedyank'
 
 """ Plugin settings -------------------------
 let g:argtextobj_pairs="[:],(:),<:>"
+
+
+" Disable arrows usage
+noremap <silent> <Up> <Nop>
+noremap <silent> <Down> <Nop>
+noremap <silent> <Left> <Nop>
+noremap <silent> <Right> <Nop>
+
+" Disable arrow keys in Insert mode
+ino <Up> <Nop>
+ino <Down> <Nop>
+ino <Left> <Nop>
+ino <Right> <Nop>
