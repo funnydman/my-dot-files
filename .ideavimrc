@@ -1,3 +1,77 @@
+""" Common settings -------------------------
+set encoding=utf-8
+set hlsearch
+set showmode
+set incsearch
+set ingorecase smartcase
+set so=5
+set nu
+set ruler
+set history=1000
+
+set clipboard=unnamedplus " for easy copy pasting
+set number relativenumber
+set path+=**
+
+" Navigation
+nnoremap [m :action MethodUp<cr>
+nnoremap ]m :action MethodDown<cr>
+
+nnoremap <c-l> <c-w>l
+nnoremap <c-j> <c-w>j
+nnoremap <c-h> <c-w>h
+nnoremap <c-k> <c-w>k
+
+
+" Clear highlighting on escape in normal mode
+nnoremap <esc> :noh<return><esc>
+
+" Is this line needed https://stackoverflow.com/a/1037182/9926721
+nnoremap <esc>^[ <esc>^[
+
+""" Idea specific settings ------------------
+set ideajoin
+set ideastatusicon=gray
+" enabled by default
+set idearefactormode=keep
+
+" Vim has 2 types of bookmarks. One is with lower case (like ma) and this is a file-scope bookmark. Another one is with upper case (like mA) and that is a project-scope bookmark.
+" IntelliJ IDEA has only one type of bookmarks - project scoped. So, the lower case bookmarks work as before and if you use upper case bookmarks you will get the gutter icon and all the stuff.
+set ideamarks
+
+"" Debugging/running
+map <leader>d :action Debug<CR>
+map <leader>r :action Run<CR>
+map <leader>c :action Stop<CR>
+map <leader>b :action ToggleLineBreakpoint<CR>
+map <leader>n :action StepInto<CR>
+map <leader>p :action StepOut<CR>
+" IdeaVim.ReloadVimRc.reload
+
+"" Idea navigation
+map <leader>s :action SelectInProjectView<CR>
+map <leader>a :action GotoAction<CR>
+map <Leader>e :action SearchEverywhere<CR>
+map <leader>h :action Vcs.ShowTabbedFileHistory<CR>
+map <leader>o :action FileStructurePopup<CR>
+map <leader>z :action ToggleDistractionFreeMode<CR>
+
+map <leader>ga ggVG
+map <leader>go :action OpenFile<CR>
+map <leader>gf :action FindInPath<CR>
+
+map = :action ReformatCode<CR>
+map <leader>gb :action Back<CR>
+
+nnoremap <leader>g  :action Generate<CR>
+nnoremap <leader>gs :action GenerateGetterAndSetter<CR>
+
+" Shortcutting split navigation, saving a keypress:
+map <C-h> <C-w>h
+map <C-j> <C-w>j
+map <C-k> <C-w>k
+map <C-l> <C-w>l
+
 """ Plugins  --------------------------------
 set surround
 set multiple-cursors
@@ -6,71 +80,11 @@ set argtextobj
 set easymotion
 set textobj-entire
 set ReplaceWithRegister
-
+Plug 'machakann/vim-highlightedyank'
 
 """ Plugin settings -------------------------
 let g:argtextobj_pairs="[:],(:),<:>"
 
-""" Common settings -------------------------
-set encoding=utf-8
-set showmode
-set so=5
-set incsearch
-set hlsearch
-set nu
-set ruler
-
-set clipboard=unnamedplus " for easy copy pasting
-set number relativenumber
-set path+=**
-" Clear highlighting on escape in normal mode
-nnoremap <esc> :noh<return><esc>
-" Is this line needed https://stackoverflow.com/a/1037182/9926721
-nnoremap <esc>^[ <esc>^[
-
-""" Idea specific settings ------------------
-set ideajoin
-set ideastatusicon=gray
-" enabled by default
-
- " Vim has 2 types of bookmarks. One is with lower case (like ma) and this is a file-scope bookmark. Another one is with upper case (like mA) and that is a project-scope bookmark.
-" IntelliJ IDEA has only one type of bookmarks - project scoped. So, the lower case bookmarks work as before and if you use upper case bookmarks you will get the gutter icon and all the stuff.
-set ideamarks
-
-"" My Mappings -----------------------------
-
-" map <leader>f <Plug>(easymotion-s)
-" map <leader>e <Plug>(easymotion-f)
-
-"" Debugging/running
-map <leader>d :action Debug<CR>
-map <leader>r :action Run<CR>
-map <leader>c :action Stop<CR>
-map <leader>z :action ToggleDistractionFreeMode<CR>
-
-map <leader>s :action SelectInProjectView<CR>
-map <leader>a :action Annotate<CR>
-map <leader>h :action Vcs.ShowTabbedFileHistory<CR>
-
-map <leader>b :action ToggleLineBreakpoint<CR>
-map <leader>o :action FileStructurePopup<CR>
-
-nmap <Leader>e :action SearchEverywhere<CR>
-
-map <leader>a ggVG
-map <leader>ga :action GotoAction<CR>
-map <leader>go :action OpenFile<CR>
-map <leader>gf :action FindInPath<CR>
-
-map = :action ReformatCode<CR>
-
-map <leader>gb :action Back<CR>
-
-" Shortcutting split navigation, saving a keypress:
-map <C-h> <C-w>h
-map <C-j> <C-w>j
-map <C-k> <C-w>k
-map <C-l> <C-w>l
 
 " Disable arrows usage
 noremap <silent> <Up> <Nop>

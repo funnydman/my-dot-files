@@ -1,4 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=Text editor
-Exec=$HOME/.config/scripts/move_to_next_available_ws.py %u
