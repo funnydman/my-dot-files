@@ -1,5 +1,6 @@
 autoload -U colors && colors
 
+# source ~/apps/zsh-autocomplete/zsh-autocomplete.plugin.zsh
 
 ### General
 # allow comments in zsh shell
@@ -129,5 +130,5 @@ export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
-
 source /home/dzmitry/apps/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+
