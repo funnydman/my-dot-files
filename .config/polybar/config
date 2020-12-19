@@ -44,6 +44,7 @@ width = 100%
 height = 20
 ;offset-x = 1%
 ;offset-y = 1%
+; tray-position = right
 
 background = ${colors.background}
 foreground = ${colors.foreground}
