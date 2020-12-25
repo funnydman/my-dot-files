@@ -20,6 +20,7 @@ Plugin 'mbbill/undotree'
 Plugin 'universal-ctags/ctags'
 Plugin 'morhetz/gruvbox'
 Plugin 'junegunn/fzf.vim'
+Plugin 'jez/vim-better-sml'
 " Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
 Plugin 'junegunn/vim-peekaboo'
 Plugin 'lervag/vimtex'
@@ -45,6 +46,39 @@ let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 let g:peekaboo_window='vert bo 60new'
+
+augroup vimbettersml
+  au!
+
+  " ----- Keybindings -----
+
+  au FileType sml nnoremap <silent> <buffer> <leader>t :SMLTypeQuery<CR>
+  au FileType sml nnoremap <silent> <buffer> gd :SMLJumpToDef<CR>
+
+  " open the REPL terminal buffer
+  au FileType sml nnoremap <silent> <buffer> <leader>is :SMLReplStart<CR>
+  " close the REPL (mnemonic: k -> kill)
+  au FileType sml nnoremap <silent> <buffer> <leader>ik :SMLReplStop<CR>
+  " build the project (using CM if possible)
+  au FileType sml nnoremap <silent> <buffer> <leader>ib :SMLReplBuild<CR>
+  " for opening a structure, not a file
+  au FileType sml nnoremap <silent> <buffer> <leader>io :SMLReplOpen<CR>
+  " use the current file into the REPL (even if using CM)
+  au FileType sml nnoremap <leader>iu :SMLReplUse<CR>
+  " clear the REPL screen
+  au FileType sml nnoremap <silent> <buffer> <leader>ic :SMLReplClear<CR>
+  " set the print depth to 100
+  au FileType sml nnoremap <silent> <buffer> <leader>ip :SMLReplPrintDepth<CR>
+
+  " ----- Other settings -----
+
+  " Uncomment to try out conceal characters
+  "au FileType sml setlocal conceallevel=2
+
+  " Uncomment to try out same-width conceal characters
+  "let g:sml_greek_tyvar_show_tick = 1
+augroup END
+
 
 
 "  defaults
