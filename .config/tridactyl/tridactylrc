@@ -147,6 +147,12 @@ command translate js let googleTranslateCallback = document.createElement('scrip
 "
 " URL redirects
 "
+" Custom Remaps
+" https://github.com/tridactyl/tridactyl/issues/64
+
+ bind n findnext 1
+ bind N findnext -1
+ bind ,<Space> nohlsearch
 
 " " New reddit is bad
 
