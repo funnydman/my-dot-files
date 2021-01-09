@@ -28,6 +28,15 @@
 
 ```
 
+## General
+**OS:** Arch Linux x86_64 LTS
+
+**Window Manager:** i3-gaps
+
+**Terminal:** st(based on Luke Smith's build), custom build (basically, just I remapped some stuff)
+
+**Shell:** zsh 
+
 
 ## Bluetooth
 - [Blueman manager](https://wiki.archlinux.org/index.php/Blueman) 
