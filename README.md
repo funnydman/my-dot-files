@@ -1,5 +1,10 @@
 # my-dot-files
 
+
+## How this looks:
+![Picture of a screen](./screen.png)
+
+## Main info (get with neofetch)
 ```
                    -`                    dzmitry@megatron
                   .o+`                   ----------------
