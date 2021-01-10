@@ -1,5 +1,5 @@
 # my-dot-files
-
+> Vim driven set up, the goal is to use the mouse as less as possible
 
 ## How this looks:
 ![Picture of a screen](./screen.png)
@@ -36,7 +36,7 @@
 
 **Window Manager:** i3-gaps
 
-**Terminal:** st(based on Luke Smith's build), custom build (basically, just I remapped some stuff)
+**Terminal:** st (based on Luke Smith's build), [custom build (basically, I just remapped some stuff)](https://github.com/funnydman/myst)
 
 **Shell:** zsh 
 
@@ -44,5 +44,22 @@
 
 **Display manager:** SDDM, [custom blade runner theme](https://github.com/funnydman/blade-runner-theme)
 
-## Bluetooth
-- [Blueman manager](https://wiki.archlinux.org/index.php/Blueman) 
+**Browser:** Firefox, plugins: 
+ - tridactyl (like vimium but much better)
+ - Privacy Badger
+ - Joplin Web Clipper
+ - Grammarly for Firefox
+ - Awesome Emoji Picker
+ - RESTer
+ - uBlock Origin
+ - Temp Mail - Disposable Temporary Email
+ - Remove YouTube Recommended Videos, Comments
+ - Simple Translate
+ - Redux DevTools
+ - React Developer Tools
+
+**Notes Taking:** Joplin, highly recommend
+
+**Editor:** neovim
+
+**Bluetooth manager:** [Blueman manager](https://wiki.archlinux.org/index.php/Blueman) 
