@@ -154,6 +154,7 @@ command translate js let googleTranslateCallback = document.createElement('scrip
  bind N findnext -1
  bind ,<Space> nohlsearch
 
+set noiframeon https://codeforces.com/
 " " New reddit is bad
 
 " Isolate Facebook in its own container
