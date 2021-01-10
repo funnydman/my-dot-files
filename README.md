@@ -37,6 +37,7 @@
 
 **Shell:** zsh 
 
+**Reader:** zathura
 
 ## Bluetooth
 - [Blueman manager](https://wiki.archlinux.org/index.php/Blueman) 
