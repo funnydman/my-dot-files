@@ -4,6 +4,9 @@
 ## How this looks:
 ![Picture of a screen](./screen.png)
 
+## Display manager (SDDM)
+![Picture of a SDDM](./blade-runner-theme.png)
+
 ## Main info (get with neofetch)
 ```
                    -`                    dzmitry@megatron
@@ -38,6 +41,8 @@
 **Shell:** zsh 
 
 **Reader:** zathura
+
+**Display manager:** SDDM, [custom blade runner theme](https://github.com/funnydman/blade-runner-theme)
 
 ## Bluetooth
 - [Blueman manager](https://wiki.archlinux.org/index.php/Blueman) 
