@@ -147,7 +147,14 @@ command translate js let googleTranslateCallback = document.createElement('scrip
 "
 " URL redirects
 "
+" Custom Remaps
+" https://github.com/tridactyl/tridactyl/issues/64
 
+ bind n findnext 1
+ bind N findnext -1
+ bind ,<Space> nohlsearch
+
+set noiframeon https://codeforces.com/
 " " New reddit is bad
 
 " Isolate Facebook in its own container
