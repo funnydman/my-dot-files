@@ -63,6 +63,6 @@
 
 **Notes Taking:** Joplin, highly recommend
 
-**Editor:** neovim
+**Editor:** neovim ([gruvbox theme](https://www.google.com/search?client=firefox-b-d&q=gruvbox))
 
 **Bluetooth manager:** [Blueman manager](https://wiki.archlinux.org/index.php/Blueman) 
