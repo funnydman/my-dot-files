@@ -31,12 +31,15 @@
 
 ```
 
+
 ## General
 **OS:** Arch Linux x86_64 LTS
 
 **Window Manager:** i3-gaps
 
-**Terminal:** st (based on Luke Smith's build), [custom build (basically, I just remapped some stuff)](https://github.com/funnydman/myst)
+**Status Bar**: Polybar
+
+**Terminal:** st (based on Luke Smith's build), [custom build (basically, I just remapped some stuff)](https://github.com/funnydman/myst)'
 
 **Shell:** zsh 
 
