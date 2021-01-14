@@ -7,6 +7,9 @@
 ## Display manager (SDDM)
 ![Picture of a SDDM](./blade-runner-theme.png)
 
+## Rofi
+![Picture of rofi](./rofi.png)
+
 ## Main info (get with neofetch)
 ```
                    -`                    dzmitry@megatron
@@ -68,6 +71,8 @@
 **Window switcher:** Rofi
 
 ## Additional 
+
+**Password Manager:** keepass
 
 **Screenshoter:** flameshot
 
