@@ -43,6 +43,8 @@
 
 **Shell:** zsh 
 
+**File manager:** ranger, nautilus 
+
 **Reader:** zathura
 
 **Display manager:** SDDM, [custom blade runner theme](https://github.com/funnydman/blade-runner-theme)
@@ -60,7 +62,6 @@
  - Simple Translate
  - Redux DevTools
  - React Developer Tools
-
 
 **Editor:** neovim ([gruvbox theme](https://www.google.com/search?client=firefox-b-d&q=gruvbox))
 
