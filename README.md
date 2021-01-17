@@ -78,5 +78,7 @@
 
 **Notes Taking:** Joplin, highly recommend
 
+**Image Viewer:** feh
+
 **Bluetooth manager:** [Blueman manager](https://wiki.archlinux.org/index.php/Blueman) 
 
