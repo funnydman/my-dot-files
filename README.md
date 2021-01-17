@@ -1,5 +1,5 @@
 # my-dot-files
-> Vim driven set up, the goal is to use the mouse as less as possible
+> Vim driven set up, the goal is to use the mouse as less as possible, based on: vim, fzf, ripgrep.
 
 ## How this looks:
 ![Picture of a screen](./screen.png)
@@ -79,6 +79,10 @@
 **Notes Taking:** Joplin, highly recommend
 
 **Image Viewer:** feh
+
+**Media Player:** mpv
+
+**Graphics Editor:** GIMP
 
 **Bluetooth manager:** [Blueman manager](https://wiki.archlinux.org/index.php/Blueman) 
 
