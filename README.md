@@ -42,15 +42,17 @@
 
 **Status Bar**: Polybar
 
-**Terminal:** st (based on Luke Smith's build | vim key bindings), [custom build (basically, I just remapped some stuff)](https://github.com/funnydman/myst)'
+**Terminal:** [myst](https://github.com/funnydman/myst) (based on Luke Smith's build | vim key bindings)
 
 **Shell:** zsh 
 
-**File manager:** ranger, nautilus 
+**File Manager:** ranger, nautilus 
+
+**Package Manager:** yay
 
 **Reader:** zathura
 
-**Display manager:** SDDM, [custom blade runner theme](https://github.com/funnydman/blade-runner-theme)
+**Display Manager:** SDDM, [custom blade runner theme](https://github.com/funnydman/blade-runner-theme)
 
 **Browser:** Firefox, plugins: 
  - tridactyl (like vimium but much better)
