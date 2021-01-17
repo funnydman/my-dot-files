@@ -42,7 +42,7 @@
 
 **Status Bar**: Polybar
 
-**Terminal:** st (based on Luke Smith's build), [custom build (basically, I just remapped some stuff)](https://github.com/funnydman/myst)'
+**Terminal:** st (based on Luke Smith's build | vim key bindings), [custom build (basically, I just remapped some stuff)](https://github.com/funnydman/myst)'
 
 **Shell:** zsh 
 
