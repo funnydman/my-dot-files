@@ -54,6 +54,8 @@
 
 **Display Manager:** SDDM, [custom blade runner theme](https://github.com/funnydman/blade-runner-theme)
 
+**Notification Daemon:** dunst 
+
 **Browser:** Firefox, plugins: 
  - tridactyl (like vimium but much better)
  - Privacy Badger
