@@ -44,6 +44,8 @@
 
 **Terminal:** [myst](https://github.com/funnydman/myst) (based on Luke Smith's build | vim key bindings)
 
+**Dropdown Terminal:** guake
+
 **Shell:** zsh 
 
 **File Manager:** ranger, nautilus 
