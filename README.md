@@ -1,5 +1,5 @@
 # my-dot-files
-> Vim driven set up, the goal is to use the mouse as less as possible, based on vim, fzf, ripgrep usage.
+> Vim driven set up, the goal is to use the mouse as less as possible, based on vim, fzf, ripgrep usage.  
 > ⭐️ Thanks everyone who has starred the project, it means a lot!
 
 ## How this looks:
