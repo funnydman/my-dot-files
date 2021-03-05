@@ -72,6 +72,8 @@
  - Simple Translate
  - Redux DevTools
  - React Developer Tools
+ - Youtube Watchmarker
+ - Todoist: To-Do list and Task Manager
 
 **Editor:** neovim ([gruvbox theme](https://www.google.com/search?client=firefox-b-d&q=gruvbox))
 
