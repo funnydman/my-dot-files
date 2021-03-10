@@ -59,7 +59,7 @@
 
 **Notification Daemon:** dunst 
 
-**Browser:** Firefox, plugins: 
+**Browser:** Firefox (theme: Matte Black (blue)), plugins: 
  - tridactyl (like vimium but much better)
  - Privacy Badger
  - Joplin Web Clipper
@@ -85,7 +85,7 @@
 
 **Screenshoter:** flameshot
 
-**Notes Taking:** Joplin, highly recommend
+**Notes Taking:** Joplin (highly recommend)
 
 **Image Viewer:** feh
 
