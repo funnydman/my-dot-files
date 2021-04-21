@@ -29,6 +29,8 @@ Plugin 'sirver/ultisnips'
 Plugin 'tridactyl/vim-tridactyl'
 " https://castel.dev/post/lecture-notes-1/ | haskell stuff
 Plugin 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
+Plugin 'wlangstroth/vim-racket'
+
 
 " markdown
 Plugin 'godlygeek/tabular'
