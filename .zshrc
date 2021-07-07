@@ -128,6 +128,8 @@ eval "$(hub alias -s)"
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --follow --glob "!.git/*"'
 export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
+export PATH="$HOME/miniconda3/bin:$PATH"
+
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 source /home/dzmitry/apps/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh

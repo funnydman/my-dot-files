@@ -69,7 +69,7 @@ font-3 = "Font Awesome 5 Free Regular:style=Solid:pixelsize=8;1"
 font-4 = "Font Awesome 5 Brands:pixelsize=8;1"
 
 modules-left = i3 xwindow
-modules-center = date
+; modules-center = date
 modules-right = xkeyboard networkspeedup networkspeeddown wireless-network backlight pulseaudio battery
 
 separator = " | "
