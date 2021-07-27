@@ -24,20 +24,14 @@ bindsym $mod+n border normal
 floating_modifier $mod
 
 # Use pactl to adjust volume in PulseAudio.
-
 bindsym XF86AudioRaiseVolume exec --no-startup-id $HOME/.config/scripts/volume.sh +5% # control max value
 # bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5% # control max value
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle
 bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 
-
-# too much social stuff!
-# bindsym $mod+t exec --no-startup-id $HOME/.config/scripts/switcher.py --name TelegramDesktop
-# bindsym $mod+s exec --no-startup-id $HOME/.config/scripts/switcher.py --name Skype
-
-bindsym XF86Tools exec --no-startup-id $HOME/.config/scripts/switcher.py --name Skype
-bindsym XF86Bluetooth exec --no-startup-id $HOME/.config/scripts/switcher.py --name TelegramDesktop
+# bindsym XF86Tools exec --no-startup-id $HOME/.config/scripts/switcher.py --name Skype
+# bindsym XF86Bluetooth exec --no-startup-id $HOME/.config/scripts/switcher.py --name TelegramDesktop
 
 bindsym XF86MonBrightnessUp exec --no-startup-id sudo light -A 5
 bindsym XF86MonBrightnessDown exec --no-startup-id sudo light -U 5
@@ -50,13 +44,14 @@ bindsym $mod + XF86MonBrightnessDown exec brightnessctl --device='tpacpi::kbd_ba
 exec_always --no-startup-id feh --bg-scale $HOME/.config/wallpapers/wall.jpg
 exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 exec_always --no-startup-id $HOME/.config/scripts/xidlelock.sh
-exec_always --no-startup-id dunst
+exec_always --no-startup-id dunst -config ~/.config/dunst/dunstrc
 
 # for shadows stuff and etc
 exec --no-startup-id picom --config $HOME/.config/picom/picom.conf
 exec --no-startup-id guake
-exec --no-startup-id skype
-exec --no-startup-id telegram-desktop
+# no procrastination anymore!
+# exec --no-startup-id skype
+# exec --no-startup-id telegram-desktop
 exec --no-startup-id flameshot
 exec --no-startup-id dropbox
 exec --no-startup-id udiskie &
@@ -114,8 +109,10 @@ bindsym $mod+Shift+Right move right
 
 # workspace back and forth (with/without active container)
 workspace_auto_back_and_forth yes
-bindsym $mod+b workspace back_and_forth
+# bindsym $mod+b workspace back_and_forth
+
 bindsym $mod+Shift+b move container to workspace back_and_forth; workspace back_and_forth
+bindsym $mod+Tab workspace back_and_forth
 
 # split orientation
 bindsym $mod+z split h;exec notify-send 'tile horizontally'
@@ -360,7 +357,7 @@ bindsym $mod + Shift + u exec $HOME/.config/i3/scripts/dunst.sh
 # brightnessctl --device='tpacpi::kbd_backlight' set 1
 bindsym $mod + grave exec $HOME/.config/scripts/next_available.py
 
-bindsym $mod+Tab                workspace next
-bindsym $mod+Shift+Tab          workspace prev
+# bindsym $mod+Tab                workspace next
+# bindsym $mod+Shift+Tab          workspace prev
 
 # xrandr --output HDMI-0 --auto --right-of eDP-1-1
