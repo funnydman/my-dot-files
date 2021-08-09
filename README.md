@@ -85,7 +85,7 @@
 
 **Screenshoter:** flameshot
 
-**Notes Taking:** Joplin (highly recommend)
+**Notes Taking:** Joplin (highly recommend), Obsidian (for Zettelkasten)
 
 **Image Viewer:** feh
 
