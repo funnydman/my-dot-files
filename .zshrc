@@ -130,7 +130,10 @@ export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
 export PATH="$HOME/miniconda3/bin:$PATH"
 
+export PATH="/usr/NX/bin/nxplayer:$PATH"
+
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
-source /home/dzmitry/apps/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source "$HOME/apps/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
+export PATH="$HOME/.poetry/bin:$PATH"
