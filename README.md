@@ -68,7 +68,8 @@
  - RESTer
  - uBlock Origin
  - Temp Mail - Disposable Temporary Email
- - Remove YouTube Recommended Videos, Comments
+ - Unhook YouTube (Remove YouTube Recommended Videos, Comments)
+ - TempMail
  - Simple Translate
  - Redux DevTools
  - React Developer Tools
