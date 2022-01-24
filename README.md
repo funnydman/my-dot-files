@@ -2,7 +2,7 @@
 > Vim driven set up, the goal is to use the mouse as less as possible, based on vim, fzf, ripgrep usage.  
 
 
-## How this looks:
+## How it looks:
 ![Picture of a screen](./screen.png)
 
 ## Display manager (SDDM)
