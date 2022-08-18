@@ -93,7 +93,8 @@ configuration {
     kb-mode-previous: "Shift+Left,Control+ISO_Left_Tab,Alt+h";
 /*	kb-row-left: "Control+Page_Up";*/
 /*	kb-row-right: "Control+Page_Down";*/
-    kb-row-up: "Up,Alt+k,ISO_Left_Tab";
+    kb-row-up: "Up,Alt+k";
+/* kb-row-up: "Up,Alt+k,ISO_Left_Tab"; this is original, I've removed ISO_Lef_Tab */
 	kb-row-down: "Down,Alt+j";
 /*	kb-row-tab: "Tab";*/
 /*	kb-page-prev: "Page_Up";*/
