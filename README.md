@@ -17,10 +17,10 @@
                   .o+`                   ----------------
                  `ooo/                   OS: Arch Linux x86_64
                 `+oooo:                  Host: 20QV0007US ThinkPad X1 Extreme 2nd
-               `+oooooo:                 Kernel: 5.4.85-1-lts
-               -+oooooo+:                Uptime: 18 hours, 53 mins
-             `/:-:++oooo+:               Packages: 1536 (pacman)
-            `/++++/+++++++:              Shell: zsh 5.8
+               `+oooooo:                 Kernel: 5.15.61-1-lts
+               -+oooooo+:                Uptime: 48 mins
+             `/:-:++oooo+:               Packages: 1911 (pacman)
+            `/++++/+++++++:              Shell: zsh 5.9
            `/++++++++++++++:             Resolution: 1920x1080
           `/+++ooooooooooooo/`           DE: i3-with-shmlog
          ./ooosssso++osssssso+`          WM: i3
@@ -30,9 +30,8 @@
      /ossssssss/        +ssssooo/-       Terminal Font: JoyPixels
    `/ossssso+/:-        -:/+osssso+-     CPU: Intel i7-9750H (12) @ 4.500GHz
   `+sso+:-`                 `.-/+oso:    GPU: NVIDIA GeForce GTX 1650 Mobile / Max-Q
- `++:.                           `-/+/   GPU: Intel UHD Graphics 630
- .`                                 `/   Memory: 3858MiB / 15657MiB
-
+ `++:.                           `-/+/   GPU: Intel CoffeeLake-H GT2 [UHD Graphics 630]
+ .`                                 `/   Memory: 6693MiB / 15643MiB
 ```
 
 
@@ -77,6 +76,7 @@
  - React Developer Tools
  - Youtube Watchmarker
  - Todoist: To-Do list and Task Manager
+ - Tampermonkey
 
 **Editor:** neovim ([gruvbox theme](https://www.google.com/search?client=firefox-b-d&q=gruvbox))
 
