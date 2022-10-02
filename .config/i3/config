@@ -205,6 +205,8 @@ assign [class="Firefox"] $ws1
 assign [class="jetbrains-pycharm"] $ws2
 assign [class="libreoffice-writer"] $w7
 
+for_window [class="^.*"] border pixel 1
+
 for_window [class="Lxappearance"] floating enable border pixel 1
 for_window [class="Gitk"] floating enable border pixel 1
 
