@@ -1,6 +1,6 @@
 # my-dot-files
 > Vim driven set up, the goal is to use the mouse as less as possible, based on vim, fzf, ripgrep usage.  
-
+> ⭐️ Thanks everyone who has starred the project, it means a lot!
 
 ## How it looks:
 ![Picture of a screen](./screen.png)
@@ -50,7 +50,7 @@
 
 **Dropdown Terminal:** guake
 
-**File Manager:** ranger, nautilus 
+**File Manager:** ranger, nautilus
 
 **Package Manager:** yay
 
@@ -96,8 +96,16 @@
 
 **Graphics Editor:** GIMP
 
-**Bluetooth manager:** [Blueman manager](https://wiki.archlinux.org/index.php/Blueman) 
+**Bluetooth manager:** Blueman
 
-
-> ⭐️ Thanks everyone who has starred the project, it means a lot!
-
+## Applications 
+### Pycharm plugins
+* Save Action
+* Key promoter
+* extra icons
+* string manipulation
+* AceJump
+* Grep Console
+* shellcheck
+* Code Glance
+* ideavim
