@@ -1,5 +1,5 @@
 # my-dot-files
-> Vim driven set up, the goal is to use the mouse as less as possible, based on vim, fzf, ripgrep usage.  
+> Vim-driven set up, the goal is to use the mouse as less as possible, based on vim, fzf, ripgrep usage.  
 > ⭐️ Thanks everyone who has starred the project, it means a lot!
 
 ## How it looks:
@@ -54,7 +54,7 @@
 
 **Package Manager:** yay
 
-**Reader:** zathura
+**Reader (pdf, epub, etc):** zathura
 
 **Display Manager:** SDDM, [custom blade runner theme](https://github.com/funnydman/blade-runner-theme)
 
@@ -78,7 +78,7 @@
  - Todoist: To-Do list and Task Manager
  - Tampermonkey
 
-**Editor:** neovim ([gruvbox theme](https://www.google.com/search?client=firefox-b-d&q=gruvbox))
+**Editor:** neovim ([gruvbox theme](https://www.google.com/search?client=firefox-b-d&q=gruvbox)), ideavim for Pycharm
 
 **Window switcher:** Rofi
 
@@ -88,7 +88,7 @@
 
 **Screenshoter:** flameshot
 
-**Notes Taking:** Joplin (highly recommend), Obsidian (for Zettelkasten)
+**Notes Taking:** Joplin (highly recommend), Obsidian (for Zettelkasten) - outdated, don't use that now -
 
 **Image Viewer:** feh
 
