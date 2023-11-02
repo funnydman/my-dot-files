@@ -98,6 +98,61 @@
 
 **Bluetooth manager:** Blueman
 
+## Fonts
+Dealing with fonts is painfull, this helped me:
+- https://gist.github.com/YoEight/d19112db56cd8f93835bf2d009d617f7
+- https://wiki.archlinux.org/title/fonts
+
+Note:  it should be Noto Sans Mono, **not** Noto Mono.
+
+Some useful commands for debugging:
+```
+fc-list | grep "Noto Mono"
+fc-match monospace
+fc-match serif
+fc-match sans-serif
+
+# To update config
+fc-cache 
+```
+
+Configuration `cat /etc/fonts/local.conf`:
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE fontconfig SYSTEM "fonts.dtd">
+<fontconfig>
+   <match>
+      <edit mode="prepend" name="family">
+         <string>Noto Sans</string>
+      </edit>
+   </match>
+   <match target="pattern">
+      <test qual="any" name="family">
+         <string>serif</string>
+      </test>
+      <edit name="family" mode="assign" binding="same">
+         <string>Noto Serif</string>
+      </edit>
+   </match>
+   <match target="pattern">
+      <test qual="any" name="family">
+         <string>sans-serif</string>
+      </test>
+      <edit name="family" mode="assign" binding="same">
+         <string>Noto Sans</string>
+      </edit>
+   </match>
+   <match target="pattern">
+      <test qual="any" name="family">
+         <string>monospace</string>
+      </test>
+      <edit name="family" mode="assign" binding="same">
+         <string>Noto Sans Mono</string>
+      </edit>
+   </match>
+</fontconfig>
+```
+
 ## Applications 
 ### Pycharm plugins
 * Save Action
