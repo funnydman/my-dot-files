@@ -2,6 +2,11 @@
 
 echo "Enter to the home mode..."
 
-pidof skype && killall skype &> /dev/null
-pidof telegram-desktop && killall telegram-desktop &> /dev/null
+echo "Killing Teams..."
+pkill teams-for-linux
+
+echo "Killing gpclient..."
+pkill gpclient
+
+# pidof telegram-desktop && killall telegram-desktop &> /dev/null
 

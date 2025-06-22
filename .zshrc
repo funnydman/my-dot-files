@@ -119,6 +119,15 @@ source ~/.config/scripts/key-bindings.zsh
 ### Paths
 export PATH=$PATH:$HOME/.config/scripts
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/miniconda3/bin:$PATH"
+export PATH="/usr/NX/bin/nxplayer:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
@@ -126,19 +135,14 @@ export PATH="$HOME/.local/bin:$PATH"
 
 eval "$(hub alias -s)"
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --follow --glob "!.git/*"'
-export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
-
-export PATH="$HOME/miniconda3/bin:$PATH"
-
-export PATH="/usr/NX/bin/nxplayer:$PATH"
-
-export PATH="$HOME/.poetry/bin:$PATH"
-
-export RIPGREP_CONFIG_PATH="$HOME/.ripgreprc"
+# export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
 source "$HOME/apps/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+
+
+[[ ~/.zshrc.hidden ]] && source ~/.zshrc.hidden
 
 
 # >>> conda initialize >>>
@@ -155,4 +159,14 @@ source "$HOME/apps/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 # fi
 # unset __conda_setup
 # <<< conda initialize <<<
+
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+# SSH
+eval $(ssh-agent -s) 1> /dev/null 2> /dev/null
+eval ssh-add ~/.ssh/work 2> /dev/null
+
+
+
+
 

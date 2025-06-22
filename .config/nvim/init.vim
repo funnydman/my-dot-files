@@ -199,3 +199,9 @@ let g:vimtex_compiler_latexmk = {
 " nnoremap <C-o> :Buffers<CR>
 " nnoremap <C-g> :GFiles<CR>
 " nnoremap <C-f> :Rg
+
+
+command RP execute '!python3 ' . expand( '%' )
+
+
+

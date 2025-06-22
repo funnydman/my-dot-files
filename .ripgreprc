@@ -1,5 +1,0 @@
-# or
---glob
-!git/*
-!venv/*
-!node_modules/*
