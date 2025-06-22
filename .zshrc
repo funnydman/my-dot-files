@@ -119,6 +119,15 @@ source ~/.config/scripts/key-bindings.zsh
 ### Paths
 export PATH=$PATH:$HOME/.config/scripts
 export PATH="$HOME/.local/bin:$PATH"
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="$HOME/miniconda3/bin:$PATH"
+export PATH="/usr/NX/bin/nxplayer:$PATH"
+export PATH="$HOME/.poetry/bin:$PATH"
+
+# Pyenv
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init - zsh)"
 
 # Load aliases and shortcuts if existent.
 [ -f "$HOME/.config/shortcutrc" ] && source "$HOME/.config/shortcutrc"
@@ -126,11 +135,38 @@ export PATH="$HOME/.local/bin:$PATH"
 
 eval "$(hub alias -s)"
 # export FZF_DEFAULT_COMMAND='rg --files --no-ignore --follow --glob "!.git/*"'
-export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
-
-export PATH="$HOME/miniconda3/bin:$PATH"
+# export PATH="`ruby -e 'puts Gem.user_dir'`/bin:$PATH"
 
 [[ /usr/local/bin/kubectl ]] && source <(kubectl completion zsh)
 
-source /home/dzmitry/apps/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+source "$HOME/apps/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
+
+
+[[ ~/.zshrc.hidden ]] && source ~/.zshrc.hidden
+
+
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/opt/anaconda/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+# if [ $? -eq 0 ]; then
+#     eval "$__conda_setup"
+# else
+#     if [ -f "/opt/anaconda/etc/profile.d/conda.sh" ]; then
+#         . "/opt/anaconda/etc/profile.d/conda.sh"
+#     else
+#         export PATH="/opt/anaconda/bin:$PATH"
+#     fi
+# fi
+# unset __conda_setup
+# <<< conda initialize <<<
+
+[ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+
+# SSH
+eval $(ssh-agent -s) 1> /dev/null 2> /dev/null
+eval ssh-add ~/.ssh/work 2> /dev/null
+
+
+
+
 

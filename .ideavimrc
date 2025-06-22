@@ -97,3 +97,4 @@ ino <Up> <Nop>
 ino <Down> <Nop>
 ino <Left> <Nop>
 ino <Right> <Nop>
+set clipboard^=ideaput

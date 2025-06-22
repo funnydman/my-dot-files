@@ -12,7 +12,7 @@ args = parser.parse_args()
 
 i3 = Connection()
 
-programs = ['TelegramDesktop', 'Skype']
+programs = ['TelegramDesktop', 'Skype', 'Microsoft Teams - Preview']
 
 prog_name = vars(args)['name']
 

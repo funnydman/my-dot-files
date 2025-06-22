@@ -67,7 +67,7 @@ bindsym $mod+d exec $HOME/.config/scripts/run_rofi.sh
 
 # execute and focus or just focus if executed
 bindsym $mod+XF86AudioMute exec --no-startup-id firefox
-bindsym $mod+XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/jetbrains-pycharm
+bindsym $mod+XF86AudioLowerVolume exec --no-startup-id ~/.local/bin/pycharm
 bindsym Print exec "flameshot gui"
 
 bindsym Shift+Print exec flameshot full -c -p ~/Pictures/
@@ -205,6 +205,8 @@ assign [class="Firefox"] $ws1
 assign [class="jetbrains-pycharm"] $ws2
 assign [class="libreoffice-writer"] $w7
 
+for_window [class="^.*"] border pixel 1
+
 for_window [class="Lxappearance"] floating enable border pixel 1
 for_window [class="Gitk"] floating enable border pixel 1
 
@@ -214,6 +216,9 @@ for_window [title="Skype"] move scratchpad
 for_window [title="TelegramDesktop"] floating enable border pixel 1
 for_window [title="TelegramDesktop"] move scratchpad
 for_window [title="TelegramDesktop"] move position center
+
+# fix for https://github.com/Guake/guake/issues/2180
+for_window [class="Guake"] move window to position 0 px 0 px
 
 # for_window [title="GIMP Startup"] move workspace $ws5
 # for_window [class="Gimp"] move workspace $ws5

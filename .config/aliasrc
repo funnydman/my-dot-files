@@ -26,10 +26,10 @@ alias \
 
 alias vimconf='nvim ~/.config/nvim/init.vim'
 alias vimi3='nvim ~/.config/i3/config'
-alias config='/usr/bin/git --git-dir=/home/dzmitry/.cfg/ --work-tree=/home/dzmitry'
-alias vimbar='nvim ~/.config/polybar/config'
+alias config='/usr/bin/git --git-dir=~/.cfg/ --work-tree=~'
+alias vimbar='nvim ~/.config/polybar/config.ini'
 alias vimalias='nvim ~/.config/aliasrc'
-alias vimpolybar='nvim ~/.config/polybar/config'
+alias vimpolybar='nvim ~/.config/polybar/config.ini'
 alias vimcron='nvim ~/.local/bin/cron/cronbat'
 
 alias py=ipython
@@ -184,7 +184,9 @@ alias gcob='git checkout $(git branch | fzf)'
 #alias poetry="python3 $HOME/.poetry/bin/poetry"
 
 alias speed="curl -s https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py | python -"
-alias gstaging='gcloud beta compute ssh --zone "us-central1-a" "dailypass-staging" --project "dailypass"'
-alias gprod='gcloud beta compute ssh --zone "asia-southeast1-b" "dailypass-production" --project "dailypass"'
 
 alias hdebug="helm install --dry-run --debug"
+
+# I hate nautilus (no dark theme)
+alias nautilus='/usr/bin/nemo'
+
