@@ -54,22 +54,42 @@ st.font:	Hack:pixelsize=14:antialias=true:autohint=true;
 /* *.color15:      #f8f8f8 */
 
 /* !! solarized */
-*.color0:	#073642
-*.color1:	#dc322f
-*.color2:	#859900
-*.color3:	#b58900
-*.color4:	#268bd2
-*.color5:	#d33682
-*.color6:	#2aa198
-*.color7:	#eee8d5
-*.color9:	#cb4b16
-*.color8:	#fdf6e3
-*.color10:	#586e75
-*.color11:	#657b83
-*.color12:	#839496
-*.color13:	#6c71c4
-*.color14:	#93a1a1
-*.color15:	#fdf6e3
+/* *.color0:	#073642 */
+/* *.color1:	#dc322f */
+/* *.color2:	#859900 */
+/* *.color3:	#b58900 */
+/* *.color4:	#268bd2 */
+/* *.color5:	#d33682 */
+/* *.color6:	#2aa198 */
+/* *.color7:	#eee8d5 */
+/* *.color9:	#cb4b16 */
+/* *.color8:	#fdf6e3 */
+/* *.color10:	#586e75 */
+/* *.color11:	#657b83 */
+/* *.color12:	#839496 */
+/* *.color13:	#6c71c4 */
+/* *.color14:	#93a1a1 */
+/* *.color15:	#fdf6e3 */
+
+/* !! gruvbox dark */
+*.color0:	#282828
+*.color1:	#cc241d
+*.color2:	#98971a
+*.color3:	#d79921
+*.color4:	#458588
+*.color5:	#b16286
+*.color6:	#689d6a
+*.color7:	#a89984
+*.color8:	#928374
+*.color9:	#fb4934
+*.color10:	#b8bb26
+*.color11:	#fabd2f
+*.color12:	#83a598
+*.color13:	#d3869b
+*.color14:	#8ec07c
+*.color15:	#ebdbb2
+*.background:	#282828
+*.foreground:	#ebdbb2
 
 /* !! xterm */
 /* *.color0:   #000000 */
@@ -114,3 +134,4 @@ st.font:	Hack:pixelsize=14:antialias=true:autohint=true;
 /* *.color256: 0#1d2021 */
 /* *.color257: 15#ebdbb2 */
 
+st.inputMethod: none

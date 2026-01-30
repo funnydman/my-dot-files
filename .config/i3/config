@@ -53,6 +53,7 @@ exec --no-startup-id guake
 # exec --no-startup-id skype
 # exec --no-startup-id telegram-desktop
 exec --no-startup-id flameshot
+exec --no-startup-id snixembed --fork
 exec --no-startup-id dropbox
 exec --no-startup-id udiskie &
 

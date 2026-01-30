@@ -1,6 +1,9 @@
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
+" Python 3 provider (pynvim installed here)
+let g:python3_host_prog = expand('~/.pyenv/versions/3.12.8/bin/python3')
+
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -20,7 +23,7 @@ Plugin 'mbbill/undotree'
 Plugin 'universal-ctags/ctags'
 Plugin 'morhetz/gruvbox'
 Plugin 'junegunn/fzf.vim'
-Plugin 'jez/vim-better-sml'
+" Plugin 'jez/vim-better-sml'
 " Peekaboo extends " and @ in normal mode and <CTRL-R> in insert mode so you can see the contents of the registers.
 Plugin 'junegunn/vim-peekaboo'
 Plugin 'lervag/vimtex'
@@ -29,7 +32,6 @@ Plugin 'sirver/ultisnips'
 Plugin 'tridactyl/vim-tridactyl'
 " https://castel.dev/post/lecture-notes-1/ | haskell stuff
 Plugin 'ndmitchell/ghcid', { 'rtp': 'plugins/nvim' }
-Plugin 'wlangstroth/vim-racket'
 
 
 " markdown

@@ -26,7 +26,7 @@ alias \
 
 alias vimconf='nvim ~/.config/nvim/init.vim'
 alias vimi3='nvim ~/.config/i3/config'
-alias config='/usr/bin/git --git-dir=~/.cfg/ --work-tree=~'
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
 alias vimbar='nvim ~/.config/polybar/config.ini'
 alias vimalias='nvim ~/.config/aliasrc'
 alias vimpolybar='nvim ~/.config/polybar/config.ini'
@@ -159,9 +159,10 @@ mem()
 {
     ps -eo rss,pid,euser,args:100 --sort %mem | grep -v grep | grep -i $@ | awk '{printf $1/1024 "MB"; $1=""; print }'
 }
-alias mem=mem
 
 # changing directories
+# alias cd="z"  # disabled - zoxide causing issues
+
 alias ..='cd ..'
 alias ...='cd ../../'
 alias ....='cd ../../../'
