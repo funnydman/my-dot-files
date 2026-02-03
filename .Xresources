@@ -136,3 +136,12 @@ st.font:	Hack:pixelsize=14:antialias=true:autohint=true;
 
 st.inputMethod: none
 Xcursor.size: 24
+
+/* Xft font rendering settings */
+Xft.autohint: 0
+Xft.antialias: 1
+Xft.hinting: 1
+Xft.hintstyle: hintmedium
+Xft.rgba: rgb
+Xft.lcdfilter: lcddefault
+Xft.dpi: 96

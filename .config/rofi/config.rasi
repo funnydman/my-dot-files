@@ -145,3 +145,5 @@ configuration {
 /*	me-accept-custom: "Control+MouseDPrimary";*/
 
 }
+
+@theme "Arc-Dark"
