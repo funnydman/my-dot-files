@@ -47,11 +47,11 @@
   },
   "network": {
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
-    "format": "{icon} {bandwidthDownBits}",
-    "format-wifi": "󰇚 {bandwidthDownBits} 󰕒 {bandwidthUpBits}",
-    "format-ethernet": "󰀂",
-    "format-disconnected": "󰖪",
-    "tooltip-format-wifi": "{essid} {signalStrength}%",
+    "format-wifi": "{icon} {essid} 󰇚{bandwidthDownBits} 󰕒{bandwidthUpBits}",
+    "format-ethernet": "󰈀 {ifname}",
+    "format-disconnected": "󰖪 Disconnected",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}/{cidr}\n󰇚 {bandwidthDownBits} 󰕒 {bandwidthUpBits}",
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr}/{cidr}\n󰇚 {bandwidthDownBits} 󰕒 {bandwidthUpBits}",
     "tooltip-format-disconnected": "Disconnected",
     "on-click": "nm-connection-editor"
   },
