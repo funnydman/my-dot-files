@@ -135,3 +135,4 @@ st.font:	Hack:pixelsize=14:antialias=true:autohint=true;
 /* *.color257: 15#ebdbb2 */
 
 st.inputMethod: none
+Xcursor.size: 24
