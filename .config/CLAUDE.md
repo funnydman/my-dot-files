@@ -362,3 +362,45 @@ env = _JAVA_AWT_WM_NONREPARENTING,1
 ```
 
 JetBrains IDEs run via XWayland (no native Wayland support yet).
+
+## Dotfiles Management (config)
+
+### What is `config`?
+A bare git repo for managing dotfiles without symlinks. The repo lives at `~/.cfg/` with worktree at `$HOME`.
+
+### Alias Definition
+```bash
+alias config='/usr/bin/git --git-dir=$HOME/.cfg/ --work-tree=$HOME'
+```
+
+### Common Commands
+```bash
+# Check status
+config st
+
+# Add a file
+config add ~/.config/hypr/hyprland.conf
+
+# Commit changes
+config commit -m "message"
+
+# Push to remote
+config push
+
+# View history
+config log --oneline
+
+# Diff changes
+config diff
+```
+
+### Adding New Config Files
+```bash
+config add ~/.config/newapp/config.conf
+config commit -m "Add newapp config"
+```
+
+### Tracked Dotfiles Location
+- Repo: `~/.cfg/` (bare git repo)
+- Worktree: `$HOME`
+- Branch: `develop`
