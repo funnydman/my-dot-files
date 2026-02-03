@@ -107,10 +107,10 @@ export LESS_TERMCAP_ue=$'\e[0m'
 export LESS_TERMCAP_us=$'\e[1;4;31m'
 
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/home/dzmitry/apps/google-cloud-sdk/path.zsh.inc' ]; then . '/home/dzmitry/apps/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/apps/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/apps/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/home/dzmitry/apps/google-cloud-sdk/completion.zsh.inc' ]; then . '/home/dzmitry/apps/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/apps/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/apps/google-cloud-sdk/completion.zsh.inc"; fi
 
 
 source ~/.config/scripts/completion.zsh
@@ -123,6 +123,8 @@ export PATH="$HOME/.cargo/bin:$PATH"
 export PATH="$HOME/miniconda3/bin:$PATH"
 export PATH="/usr/NX/bin/nxplayer:$PATH"
 export PATH="$HOME/.poetry/bin:$PATH"
+export PATH="$HOME/.claude/local:$PATH"
+
 
 # Pyenv
 export PYENV_ROOT="$HOME/.pyenv"
@@ -166,7 +168,17 @@ source "$HOME/apps/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 eval $(ssh-agent -s) 1> /dev/null 2> /dev/null
 eval ssh-add ~/.ssh/work 2> /dev/null
 
+# eval "$(zoxide init zsh)"  # disabled - causing issues with claude
 
 
+export SUDO_EDITOR="nvim -u $HOME/.config/nvim/init.vim"
 
 
+# alias claude="$HOME/.claude/local/claude"
+
+# Claude Code alias
+alias claude="claude --allow-dangerously-skip-permissions"
+
+
+# for automatic ssh key loads
+export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
