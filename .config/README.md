@@ -337,6 +337,12 @@ killall waybar && waybar
   - Terminal configuration
   - Common issues & solutions
 
+- **⌨️ [IDEAVIM_GUIDE.md](.config/IDEAVIM_GUIDE.md)** - IdeaVim configuration & plugins
+  - Available plugins (20+ options)
+  - Recommended additions (which-key, NERDTree, exchange)
+  - Modern best practices (2025-2026)
+  - Action mappings for refactoring & testing
+
 ### 🔧 Quick Reference
 
 **Managing dotfiles**:
