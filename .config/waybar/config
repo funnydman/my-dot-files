@@ -46,6 +46,7 @@
     }
   },
   "network": {
+    "interval": 2,
     "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
     "format-wifi": "{icon} {essid} 󰇚{bandwidthDownBits} 󰕒{bandwidthUpBits}",
     "format-ethernet": "󰈀 {ifname}",
@@ -53,7 +54,7 @@
     "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}/{cidr}\n󰇚 {bandwidthDownBits} 󰕒 {bandwidthUpBits}",
     "tooltip-format-ethernet": "{ifname}\n{ipaddr}/{cidr}\n󰇚 {bandwidthDownBits} 󰕒 {bandwidthUpBits}",
     "tooltip-format-disconnected": "Disconnected",
-    "on-click": "nm-connection-editor"
+    "on-click": "kitty --title nmtui --class nmtui nmtui"
   },
   "battery": {
     "format": "{icon} {capacity}%",
@@ -85,8 +86,7 @@
       "default": ["󰕿", "󰖀", "󰕾"]
     },
     "tooltip-format": "{volume}%",
-    "on-click": "pavucontrol",
-    "on-click-right": "pamixer -t",
+    "on-click": "pactl set-sink-mute @DEFAULT_SINK@ toggle",
     "scroll-step": 5
   },
   "tray": {
