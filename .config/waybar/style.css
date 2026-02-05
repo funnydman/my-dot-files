@@ -75,6 +75,7 @@ tooltip {
 #backlight,
 #bluetooth,
 #pulseaudio,
+#language,
 #custom-weather,
 #custom-update,
 #idle_inhibitor,
@@ -102,6 +103,7 @@ tooltip {
 #battery:hover,
 #bluetooth:hover,
 #backlight:hover,
+#language:hover,
 #custom-omarchy:hover,
 #custom-weather:hover,
 #custom-update:hover,
@@ -182,6 +184,11 @@ tooltip {
 
 #bluetooth {
        background-color: #d65d0e;
+    color: #282828;
+}
+
+#language {
+    background-color: #83a598;
     color: #282828;
 }
 

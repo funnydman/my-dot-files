@@ -8,6 +8,7 @@
   "modules-center": ["hyprland/window"],
   "modules-right": [
     "tray",
+    "hyprland/language",
     "backlight",
     "bluetooth",
     "pulseaudio",
@@ -24,6 +25,9 @@
   "hyprland/window": {
     "format": "{title}",
     "max-length": 50
+  },
+  "hyprland/language": {
+    "format": "󰌓 {short}"
   },
   "cpu": {
     "interval": 2,
