@@ -9,7 +9,8 @@
   "modules-right": [
     "tray",
     "hyprland/language",
-    "backlight",
+    "custom/brightness-internal",
+    "custom/brightness-external",
     "bluetooth",
     "pulseaudio",
     "network",
@@ -79,9 +80,28 @@
     "tooltip-format": "{num_connections} connected",
     "on-click": "blueman-manager"
   },
-  "backlight": {
-    "format": "{icon} {percent}%",
-    "format-icons": ["󰃞", "󰃟", "󰃠"]
+  "custom/brightness-internal": {
+    "format": "{icon} {percentage}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "return-type": "json",
+    "exec": "brightnessctl -d intel_backlight get | { read x; max=$(brightnessctl -d intel_backlight max); pct=$((x * 100 / max)); echo '{\"percentage\":'$pct'}'; }",
+    "exec-if": "hyprctl monitors -j | jq -e '.[] | select(.name == \"eDP-1\" and .disabled == false)' > /dev/null",
+    "on-scroll-up": "brightnessctl -d intel_backlight set 5%+",
+    "on-scroll-down": "brightnessctl -d intel_backlight set 5%-",
+    "interval": 2,
+    "tooltip": false
+  },
+  "custom/brightness-external": {
+    "format": "{icon} {percentage}%",
+    "format-icons": ["󰃞", "󰃟", "󰃠"],
+    "return-type": "json",
+    "exec": "ddcutil --bus 9 getvcp 10 2>/dev/null | grep -oP 'current.*?=\\s*\\K[0-9]+' | { read x; echo '{\"percentage\":'${x}'}'; }",
+    "exec-if": "hyprctl monitors -j | jq -e '.[] | select(.name == \"DP-2\" and .disabled == false)' > /dev/null",
+    "on-scroll-up": "ddcutil --noverify --sleep-multiplier 0.1 --bus 9 setvcp 10 + 5 && pkill -RTMIN+8 waybar",
+    "on-scroll-down": "ddcutil --noverify --sleep-multiplier 0.1 --bus 9 setvcp 10 - 5 && pkill -RTMIN+8 waybar",
+    "signal": 8,
+    "interval": 2,
+    "tooltip": false
   },
   "pulseaudio": {
     "format": "{icon} {volume}%",

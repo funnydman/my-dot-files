@@ -72,7 +72,8 @@ tooltip {
 #battery,
 #network,
 #memory,
-#backlight,
+#custom-brightness-internal,
+#custom-brightness-external,
 #bluetooth,
 #pulseaudio,
 #language,
@@ -102,7 +103,8 @@ tooltip {
 #temperature:hover,
 #battery:hover,
 #bluetooth:hover,
-#backlight:hover,
+#custom-brightness-internal:hover,
+#custom-brightness-external:hover,
 #language:hover,
 #custom-omarchy:hover,
 #custom-weather:hover,
@@ -177,7 +179,8 @@ tooltip {
     color: #282828;
 }
 
-#backlight {
+#custom-brightness-internal,
+#custom-brightness-external {
     background-color: #d3869b;
     color: #282828;
 }
