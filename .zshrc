@@ -164,9 +164,18 @@ source "$HOME/apps/fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh"
 
 [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 
-# SSH
-eval $(ssh-agent -s) 1> /dev/null 2> /dev/null
-eval ssh-add ~/.ssh/work 2> /dev/null
+# SSH - auto-load all private keys into systemd ssh-agent
+for key in ~/.ssh/*; do
+    # Skip non-files, public keys, known_hosts, config, pem files, and other non-key files
+    [[ ! -f "$key" ]] && continue
+    [[ "$key" == *.pub ]] && continue
+    [[ "$key" == */known_hosts* ]] && continue
+    [[ "$key" == */config ]] && continue
+    [[ "$key" == *.pem ]] && continue
+    [[ "$key" == *.html ]] && continue
+    # Check if file looks like a private key
+    head -1 "$key" 2>/dev/null | grep -q "PRIVATE KEY" && ssh-add "$key" 2>/dev/null
+done
 
 # eval "$(zoxide init zsh)"  # disabled - causing issues with claude
 

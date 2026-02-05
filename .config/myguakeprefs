@@ -13,27 +13,34 @@ quick-open-command-line='gedit %(file_path)s'
 restore-tabs-notify=true
 restore-tabs-startup=true
 save-tabs-when-changed=true
+schema-version='3.9.1.dev0'
 scroll-keystroke=true
 start-at-login=false
 use-default-font=false
-use-popup=true
+use-popup=false
 use-scrollbar=true
-use-trayicon=true
+use-trayicon=false
 window-halignment=0
-window-height=50
+window-height=54
 window-losefocus=false
 window-refocus=false
 window-tabbar=true
 window-width=100
 
 [keybindings/global]
-show-hide='grave'
+show-hide='Favorites'
+
+[keybindings/local]
+clipboard-copy='<Alt>c'
+clipboard-paste='<Primary>v'
+next-tab='<Alt>l'
+previous-tab='<Alt>h'
 
 [style/background]
-transparency=93
+transparency=95
 
 [style/font]
 allow-bold=true
-palette='#000000000000:#cccc00000000:#4e4e9a9a0606:#c4c4a0a00000:#25258988cfcf:#757550507b7b:#060698209a9a:#d3d3d7d7cfcf:#555557575353:#efef29292929:#8a8ae2e23434:#fcfce9e94f4f:#72729f9fcfcf:#adad7f7fa8a8:#fcfcafaf3e3e:#eeeeeeeeecec:#ebebdbdbb2b2:#282828282828'
+palette='#282828282828:#cccc24241d1d:#989897971a1a:#d7d799992121:#454585858888:#b1b162628686:#68689d9d6a6a:#a8a899998484:#929283837474:#fbfb49493434:#b8b8bbbb2626:#fafabdbd2f2f:#8383a5a59898:#d3d386869b9b:#8e8ec0c07c7c:#ebebdbbbb2b2:#fbfbf1f1c7c7:#323230302f2f'
 palette-name='Custom'
-style='Liberation Mono 11'
+style='Hack 10'
