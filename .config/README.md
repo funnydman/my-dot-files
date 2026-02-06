@@ -25,7 +25,7 @@ Optimized for laptops with Intel + NVIDIA GPUs. Eliminates input lag on external
 - 📺 Internal display → Intel iGPU (direct rendering)
 - 🖥️ External display → NVIDIA dGPU (direct rendering)
 - ⚡ No cross-GPU frame copying = zero lag
-- 📄 Full docs: [NVIDIA_HYBRID_FIX.md](.config/hypr/NVIDIA_HYBRID_FIX.md)
+- 📄 Full docs: [NVIDIA_HYBRID_FIX.md](hypr/NVIDIA_HYBRID_FIX.md)
 
 ### 🎯 Smart Display Management
 - 🔆 Auto brightness detection (internal vs external)
@@ -326,18 +326,18 @@ killall waybar && waybar
 
 ### 📖 Detailed Guides
 
-- **🎮 [NVIDIA_HYBRID_FIX.md](.config/hypr/NVIDIA_HYBRID_FIX.md)** - Complete hybrid GPU setup guide
+- **🎮 [NVIDIA_HYBRID_FIX.md](hypr/NVIDIA_HYBRID_FIX.md)** - Complete hybrid GPU setup guide
   - Root cause analysis of input lag
   - Step-by-step fix with udev rules
   - Verification commands
 
-- **📝 [CLAUDE.md](.config/CLAUDE.md)** - Migration reference & troubleshooting
+- **📝 [CLAUDE.md](CLAUDE.md)** - Migration reference & troubleshooting
   - Font configuration tricks
   - Theme setup steps
   - Terminal configuration
   - Common issues & solutions
 
-- **⌨️ [IDEAVIM_GUIDE.md](.config/IDEAVIM_GUIDE.md)** - IdeaVim configuration & plugins
+- **⌨️ [IDEAVIM_GUIDE.md](IDEAVIM_GUIDE.md)** - IdeaVim configuration & plugins
   - Available plugins (20+ options)
   - Recommended additions (which-key, NERDTree, exchange)
   - Modern best practices (2025-2026)
