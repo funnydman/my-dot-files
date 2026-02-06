@@ -51,6 +51,10 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 
 let g:peekaboo_window='vert bo 60new'
 
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_conceal = 0
+let g:vim_markdown_conceal_code_blocks = 0
+
 augroup vimbettersml
   au!
 
@@ -188,6 +192,16 @@ ino <Left> <Nop>
 ino <Right> <Nop>
 
 set showmode
+
+" Unified Ctrl-V paste (like other programs)
+" Remap Visual Block to Ctrl-Q first
+nnoremap <C-q> <C-v>
+vnoremap <C-q> <C-v>
+" Ctrl-V to paste in all modes
+nnoremap <C-v> "+P
+vnoremap <C-v> "_d"+P
+inoremap <C-v> <C-r>+
+cnoremap <C-v> <C-r>+
 command! -bang -nargs=* Find call fzf#vim#grep('rg --column --line-number --no-heading --fixed-strings --ignore-case --no-ignore --hidden --follow --glob "!.git/*" --color "always" '.shellescape(<q-args>), 1, <bang>0)
 
 " Make zathura default view and latex default tex flavor
