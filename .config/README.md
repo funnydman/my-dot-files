@@ -62,7 +62,7 @@ Optimized for laptops with Intel + NVIDIA GPUs. Eliminates input lag on external
 | 🗔 **Compositor** | Hyprland 0.53.3 | Modern tiling Wayland compositor |
 | 📊 **Bar** | Waybar | Highly customizable status bar |
 | 💻 **Terminal** | Kitty | Fast, GPU-accelerated, Wayland-native |
-| 📥 **Dropdown** | Guake (F12) | Instant terminal access |
+| 📥 **Dropdown** | Kitty (Super+C / F12) | Centered floating scratchpad terminal |
 | 🔍 **Launcher** | Rofi | Quick app launcher |
 | 🔔 **Notifications** | mako | Lightweight notification daemon |
 | 🔒 **Lock** | hyprlock | Beautiful lock screen with blur |
@@ -74,6 +74,12 @@ Optimized for laptops with Intel + NVIDIA GPUs. Eliminates input lag on external
 - 🐍 **IDE**: PyCharm (via XWayland)
 - 🐚 **Shell**: ZSH with custom completions
 - 📦 **Dotfiles**: Bare git repo (no symlinks!)
+
+### 🔊 Audio & Media
+
+- 🎵 **Audio**: PipeWire + WirePlumber (auto device switching)
+- 🎧 **USB-C headphones**: Plug & play, auto-routes on connect/disconnect
+- 🔊 **Volume**: Media keys with 100% cap
 
 ### 🎨 Theme & Appearance
 
@@ -104,6 +110,9 @@ Optimized for laptops with Intel + NVIDIA GPUs. Eliminates input lag on external
 ```bash
 # Core desktop
 sudo pacman -S hyprland waybar kitty rofi mako swaybg grim slurp swappy
+
+# Audio (PipeWire + WirePlumber for auto device switching)
+sudo pacman -S pipewire pipewire-pulse wireplumber
 
 # Fonts & themes
 sudo pacman -S ttf-jetbrains-mono-nerd ttf-nerd-fonts-symbols
@@ -170,8 +179,7 @@ Hyprland
 <details>
 <summary><b>💻 Terminal</b></summary>
 
-- `~/.config/kitty/kitty.conf` (105 lines) - Kitty config
-- Guake: Auto-configured with F12 binding
+- `~/.config/kitty/kitty.conf` (105 lines) - Kitty config (also used as dropdown terminal)
 </details>
 
 <details>
@@ -237,7 +245,7 @@ Hyprland
 | Keys | Action |
 |------|--------|
 | `Mod + D` | 🔍 Launch Rofi |
-| `F12` | 📥 Toggle Guake dropdown |
+| `Mod + C` / `F12` | 📥 Toggle kitty dropdown |
 | `Mod + Escape` | 🔒 Lock screen |
 
 ### 🖥️ System Controls
@@ -371,6 +379,12 @@ config ls-files
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v2.1** | 2026-02 | 🔧 **Polish & Modernization** |
+| | | - Replaced Guake with Kitty dropdown (Super+C, centered float) |
+| | | - Per-app scratchpads (Telegram, KeePass) |
+| | | - PipeWire + WirePlumber (auto USB-C audio switching) |
+| | | - Fixed font rendering with croscore metric-compatible fonts |
+| | | - Focus follows mouse |
 | **v2.0** | 2025-02 | 🎉 **Hyprland/Wayland Migration** |
 | | | - Switched from i3 to Hyprland |
 | | | - X11 → Wayland (native) |
@@ -387,7 +401,7 @@ config ls-files
 Despite the major migration, these features remained unchanged:
 - ⌨️ Vim-style hjkl navigation
 - 🔢 Workspace numbers (1-10)
-- 📥 Guake F12 dropdown terminal
+- 📥 Dropdown terminal (now Kitty instead of Guake)
 - 📐 Negative gaps (i3-style: 4px inner, -4px outer)
 - 🎨 Arc-Dark + Gruvbox theme combination
 
