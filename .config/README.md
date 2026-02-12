@@ -317,6 +317,13 @@ Check GPU configuration in `~/.config/hypr/hyprland.conf`:
 - Verify `AQ_DRM_DEVICES` setting
 - See troubleshooting in `NVIDIA_HYBRID_FIX.md`
 
+### 🐍 PyCharm terminal vim-mode broken?
+
+PyCharm 2026's reworked terminal engine breaks zsh vi-mode. Fix:
+
+1. **Disable "Move focus to editor with Esc"** — Settings → Tools → Terminal, uncheck it. Intercepts ESC before zsh vi-mode can receive it.
+2. **Disable Shell integration** — Settings → Tools → Terminal, uncheck Shell integration. Still intercepts input even after the ESC fix.
+
 ### 🔍 Debug Logs
 
 ```bash
