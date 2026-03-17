@@ -188,6 +188,11 @@ export SUDO_EDITOR="nvim -u $HOME/.config/nvim/init.vim"
 # Claude Code alias
 alias claude="claude --allow-dangerously-skip-permissions"
 
+# Sensitive aliases (tokens, proxy configs) in .zshrc.hidden
+[[ -f ~/.zshrc.hidden ]] && source ~/.zshrc.hidden
 
 # for automatic ssh key loads
 export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
+
+# opencode
+export PATH=/home/dzmitry/.opencode/bin:$PATH

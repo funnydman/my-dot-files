@@ -71,7 +71,7 @@ Optimized for laptops with Intel + NVIDIA GPUs. Eliminates input lag on external
 ### 🛠️ Development Stack
 
 - 📝 **Editors**: Neovim + VS Code (Wayland-native)
-- 🐍 **IDE**: PyCharm (via XWayland)
+- 🐍 **IDE**: PyCharm (native Wayland via WLToolkit)
 - 🐚 **Shell**: ZSH with custom completions
 - 📦 **Dotfiles**: Bare git repo (no symlinks!)
 
@@ -79,14 +79,16 @@ Optimized for laptops with Intel + NVIDIA GPUs. Eliminates input lag on external
 
 - 🎵 **Audio**: PipeWire + WirePlumber (auto device switching)
 - 🎧 **USB-C headphones**: Plug & play, auto-routes on connect/disconnect
-- 🔊 **Volume**: Media keys with 100% cap
+- 🔊 **Volume**: wpctl with 100% cap (`wpctl set-volume -l 1.0`)
+- 📄 **PDF**: Sioyek (replaced Zathura)
+- 🎬 **Video**: mpv (Vulkan, `gpu-next`, uosc + thumbfast)
 
 ### 🎨 Theme & Appearance
 
 - 🎨 **GTK**: Arc-Dark
 - 🎭 **Icons**: Papirus-Dark
 - 🔤 **UI Font**: Noto Sans 10
-- 💻 **Terminal Font**: JetBrainsMono Nerd Font
+- 💻 **Terminal Font**: Hack 10
 - 🌈 **Colors**: Gruvbox Dark Soft
   - Terminal: `#32302f`
   - Waybar: `#1d2021`
@@ -180,6 +182,13 @@ Hyprland
 <summary><b>💻 Terminal</b></summary>
 
 - `~/.config/kitty/kitty.conf` (105 lines) - Kitty config (also used as dropdown terminal)
+- `~/.claude/keybindings.json` - Claude Code keybindings (image paste on Ctrl+Shift+V)
+
+**Copy/Paste Setup (IDE-style)**:
+- `Ctrl+C` - Copy if text selected, SIGINT if not (`copy_and_clear_or_interrupt`)
+- `Ctrl+V` - Paste text from clipboard
+- `Ctrl+Shift+V` - Paste image (in Claude Code only)
+- Remote control enabled (`allow_remote_control socket-only`) for TUI app compatibility
 </details>
 
 <details>
@@ -213,9 +222,9 @@ Hyprland
 - Bound to Super+P
 - Auto-runs on startup
 
-**🔊 Volume Control** (`~/.config/scripts/volume.sh`)
-- Volume control with 100% limit
-- Used by media keys
+**🔊 Volume Control** (direct in hyprland.conf)
+- Uses `wpctl set-volume -l 1.0 @DEFAULT_AUDIO_SINK@ 5%+` directly
+- Legacy `volume.sh` script no longer used by media keys
 
 ## ⌨️ Keybindings
 
@@ -239,6 +248,19 @@ Hyprland
 | `Mod + 1-9, 0` | 🔢 Switch workspace 1-10 |
 | `Mod + Shift + 1-9, 0` | 📦 Move window to workspace |
 | `Mod + Tab` | ⏮️ Previous workspace |
+
+### 📋 Copy/Paste (IDE-style)
+
+| Keys | Action |
+|------|--------|
+| `Ctrl + C` | 📋 Copy (if selected) / SIGINT (if not) |
+| `Ctrl + V` | 📋 Paste text from clipboard |
+| `Ctrl + Shift + V` | 🖼️ Paste image (Claude Code) |
+| `Shift + Insert` | 📋 Paste text (alternative) |
+
+> **Nuance**: Kitty intercepts `Ctrl+V` for text paste before TUI apps see it.
+> Claude Code's image paste is remapped to `Ctrl+Shift+V` via `~/.claude/keybindings.json`.
+> Kitty's default `Ctrl+Shift+V` is cleared so it passes through to Claude Code.
 
 ### 🚀 Applications
 
@@ -324,6 +346,10 @@ PyCharm 2026's reworked terminal engine breaks zsh vi-mode. Fix:
 1. **Disable "Move focus to editor with Esc"** — Settings → Tools → Terminal, uncheck it. Intercepts ESC before zsh vi-mode can receive it.
 2. **Disable Shell integration** — Settings → Tools → Terminal, uncheck Shell integration. Still intercepts input even after the ESC fix.
 
+### 🔒 Can't type password on lock screen?
+
+If keyboard was on Russian layout when screen locked, hyprlock inherits that layout and you can't type your password. Already fixed: `hyprctl switchxkblayout all 0` runs before hyprlock in both `hyprland.conf` and `hypridle.conf`.
+
 ### 🔍 Debug Logs
 
 ```bash
@@ -346,11 +372,11 @@ killall waybar && waybar
   - Step-by-step fix with udev rules
   - Verification commands
 
-- **📝 [CLAUDE.md](CLAUDE.md)** - Migration reference & troubleshooting
-  - Font configuration tricks
-  - Theme setup steps
-  - Terminal configuration
-  - Common issues & solutions
+- **📝 [CLAUDE.md](CLAUDE.md)** - Project index & quick reference
+  - Technology stack & config paths
+  - Active scripts & keybindings
+  - Known issues & pitfalls
+  - Troubleshooting commands
 
 - **⌨️ [IDEAVIM_GUIDE.md](IDEAVIM_GUIDE.md)** - IdeaVim configuration & plugins
   - Available plugins (20+ options)
@@ -386,6 +412,15 @@ config ls-files
 
 | Version | Date | Changes |
 |---------|------|---------|
+| **v2.2** | 2026-03 | 🔧 **Media & Fixes** |
+| | | - Added Sioyek PDF viewer (replaced Zathura) |
+| | | - Added mpv with Vulkan, uosc, thumbfast |
+| | | - Fixed hyprlock Russian layout lockout (auto-switch to EN before lock) |
+| | | - Volume keys now use wpctl directly (replaced broken volume.sh) |
+| | | - Fixed monitor-toggle detection for disabled displays |
+| | | - WirePlumber priority config for stable audio defaults |
+| | | - Waybar startup race condition fix (delayed start) |
+| | | - Kitty Ctrl+F search in terminal |
 | **v2.1** | 2026-02 | 🔧 **Polish & Modernization** |
 | | | - Replaced Guake with Kitty dropdown (Super+C, centered float) |
 | | | - Per-app scratchpads (Telegram, KeePass) |
