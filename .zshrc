@@ -196,3 +196,10 @@ export SSH_AUTH_SOCK="$XDG_RUNTIME_DIR/ssh-agent.socket"
 
 # opencode
 export PATH=/home/dzmitry/.opencode/bin:$PATH
+
+# bun completions
+[ -s "/home/dzmitry/.bun/_bun" ] && source "/home/dzmitry/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"

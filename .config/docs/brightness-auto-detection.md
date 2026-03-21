@@ -1,13 +1,14 @@
 # Brightness Auto-Detection
 
-External monitor brightness controls auto-detect the DDC bus and DP connector,
-so switching USB-C ports doesn't require config changes.
+External monitor brightness controls auto-detect the DDC bus and connector (DP or HDMI),
+so switching USB-C ports or using a KVM switch doesn't require config changes.
 
 ## Problem
 
-The ASUS PA279CV connects via USB-C. Different ports map to different DP connectors
-(DP-1 vs DP-2) and i2c buses (bus 8 vs bus 9). Previously, all configs hardcoded
-`DP-2` and `--bus 9`, breaking brightness when using a different port.
+The ASUS PA279CV connects via USB-C (direct, maps to DP-1/DP-2) or HDMI
+(via UGREEN KVM 2-in-2-out switch, maps to HDMI-A-1). Different ports map to
+different connectors and i2c buses. Previously, all configs hardcoded
+`DP-2` and `--bus 9`, breaking brightness when using a different port or KVM.
 
 ## Solution
 
@@ -15,7 +16,7 @@ The ASUS PA279CV connects via USB-C. Different ports map to different DP connect
 
 Central helper that auto-detects the DDC i2c bus for the active external monitor.
 
-- Checks `/sys/class/drm/card*-DP-*/status` to find the connected DP connector
+- Checks `/sys/class/drm/card*-{DP,HDMI-A}-*/status` to find the connected external connector
 - Runs `ddcutil detect --brief` to find the bus number for valid (non-laptop) displays
 - Caches result in `/tmp/ddc-bus` keyed by connector name (e.g. `card1-DP-1`)
 - Cache invalidates automatically when the connector changes (different USB-C port)
@@ -28,7 +29,7 @@ rather than checking for a specific DP name. Uses `ddc-bus.sh` for the bus numbe
 
 ### `scripts/monitor-toggle.sh`
 
-Handles Super+P toggle. Reads connected DP connector from sysfs instead of hardcoding.
+Handles Super+P toggle. Reads connected DP or HDMI connector from sysfs instead of hardcoding.
 Invalidates `/tmp/ddc-bus` cache on toggle.
 
 ### `waybar/config` — `custom/brightness-external`
@@ -54,5 +55,7 @@ Super+P (hyprland.conf)
 ## Relevant hardware
 
 - **Laptop panel**: eDP-1 (Intel UHD 630) — uses `brightnessctl`, no DDC
-- **External**: ASUS PA279CV via USB-C (NVIDIA GTX 1650) — uses `ddcutil` over DDC/CI
-- NVIDIA adapter i2c buses: 6-10 (bus number depends on which USB-C port is used)
+- **External**: ASUS PA279CV (NVIDIA GTX 1650) — uses `ddcutil` over DDC/CI
+  - Via USB-C direct: maps to DP-1 or DP-2
+  - Via HDMI (UGREEN KVM): maps to HDMI-A-1
+- NVIDIA adapter i2c buses: 6-10 (bus number depends on connection type and port)

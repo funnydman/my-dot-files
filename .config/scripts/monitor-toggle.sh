@@ -1,13 +1,13 @@
 #!/bin/bash
 # Exclusive toggle: only one monitor active at a time
-# Auto-detects external monitor name from connected DP connectors
+# Auto-detects external monitor from connected DP or HDMI connectors
 
-# Find the connected external DP connector
+# Find the connected external connector (DP or HDMI, not eDP)
 EXT_NAME=""
-for dp in /sys/class/drm/card*-DP-*; do
-    if [ "$(cat "$dp/status" 2>/dev/null)" = "connected" ]; then
-        # Extract Hyprland monitor name (e.g., card1-DP-1 -> DP-1)
-        EXT_NAME=$(basename "$dp" | sed 's/card[0-9]*-//')
+for conn in /sys/class/drm/card*-{DP,HDMI-A}-*; do
+    if [ "$(cat "$conn/status" 2>/dev/null)" = "connected" ]; then
+        # Extract Hyprland monitor name (e.g., card1-DP-1 -> DP-1, card0-HDMI-A-1 -> HDMI-A-1)
+        EXT_NAME=$(basename "$conn" | sed 's/card[0-9]*-//')
         break
     fi
 done
