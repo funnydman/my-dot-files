@@ -372,17 +372,17 @@ killall waybar && waybar
   - Step-by-step fix with udev rules
   - Verification commands
 
-- **📝 [CLAUDE.md](CLAUDE.md)** - Project index & quick reference
-  - Technology stack & config paths
-  - Active scripts & keybindings
-  - Known issues & pitfalls
-  - Troubleshooting commands
-
 - **⌨️ [IDEAVIM_GUIDE.md](IDEAVIM_GUIDE.md)** - IdeaVim configuration & plugins
   - Available plugins (20+ options)
   - Recommended additions (which-key, NERDTree, exchange)
   - Modern best practices (2025-2026)
   - Action mappings for refactoring & testing
+
+- **🔆 [brightness-auto-detection.md](docs/brightness-auto-detection.md)** - DDC bus auto-detection for external monitor brightness
+
+- **🍎 [mac-setup.md](docs/mac-setup.md)** - MacBook Pro M4 Pro setup (display, sleep, audio, KVM)
+
+- **🪑 [flexispot-e7-plus-memory.md](docs/flexispot-e7-plus-memory.md)** - FlexiSpot E7 Plus memory presets
 
 ### 🔧 Quick Reference
 
