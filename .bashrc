@@ -186,3 +186,5 @@ function makezip() { zip -r "${1%%/}.zip" "$1" ; }
 # The next line enables shell command completion for gcloud.
 #if [ -f '/home/dzmitry/google-cloud-sdk/completion.bash.inc' ]; then . '/home/dzmitry/google-cloud-sdk/completion.bash.inc'; fi
 . "$HOME/.cargo/env"
+
+alias claude-mem='/home/dzmitry/.bun/bin/bun "/home/dzmitry/.claude/plugins/cache/thedotmack/claude-mem/10.6.1/scripts/worker-service.cjs"'

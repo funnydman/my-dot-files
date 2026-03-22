@@ -203,3 +203,5 @@ export PATH=/home/dzmitry/.opencode/bin:$PATH
 # bun
 export BUN_INSTALL="$HOME/.bun"
 export PATH="$BUN_INSTALL/bin:$PATH"
+
+alias claude-mem='/home/dzmitry/.bun/bin/bun "/home/dzmitry/.claude/plugins/cache/thedotmack/claude-mem/10.6.1/scripts/worker-service.cjs"'
