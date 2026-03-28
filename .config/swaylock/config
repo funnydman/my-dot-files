@@ -1,0 +1,58 @@
+ignore-empty-password
+show-failed-attempts
+
+# Blur + vignette (applied to image passed via --image)
+effect-blur=12x5
+effect-vignette=0.3:0.6
+color=32302f
+
+# Clock
+clock
+timestr=%H:%M
+datestr=%A, %d %B
+
+# Gruvbox Dark Soft colors
+font=Hack
+font-size=24
+
+# Indicator ring
+indicator
+indicator-radius=120
+indicator-thickness=10
+
+# Ring colors (Gruvbox)
+inside-color=32302f00
+inside-clear-color=32302f00
+inside-caps-lock-color=32302f00
+inside-ver-color=45858800
+inside-wrong-color=cc241d00
+
+ring-color=928374ff
+ring-clear-color=689d6aff
+ring-caps-lock-color=d79921ff
+ring-ver-color=458588ff
+ring-wrong-color=cc241dff
+
+# Separator
+separator-color=00000000
+
+# Key highlight
+key-hl-color=b8bb26ff
+bs-hl-color=fb4934ff
+
+# Text colors
+text-color=ebdbb2ff
+text-clear-color=689d6aff
+text-caps-lock-color=d79921ff
+text-ver-color=458588ff
+text-wrong-color=cc241dff
+
+# Layout text
+layout-text-color=a89984ff
+
+# Line (border between ring and inside)
+line-color=00000000
+line-clear-color=00000000
+line-caps-lock-color=00000000
+line-ver-color=00000000
+line-wrong-color=00000000
