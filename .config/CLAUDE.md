@@ -34,7 +34,7 @@ config ls-files        # list all tracked files
 | App Launcher | Rofi (Arc-Dark) | `rofi/config.rasi` |
 | Notifications | mako | `mako/config` |
 | Lock Screen | swaylock-effects | `swaylock/config`, `hypr/hyprland.conf` (bind), `hypr/hypridle.conf` (auto) |
-| Idle | hypridle | `hypr/hypridle.conf` (dim 600s, screen off 800s, lock 3h, suspend 4h) |
+| Idle | hypridle | `hypr/hypridle.conf` (dim 600s, screen off 800s, lock 3h, no suspend) |
 | Wallpaper | swaybg | launched in hyprland.conf |
 | Screenshots | grim + slurp + swappy | `swappy/config` |
 | PDF Viewer | Sioyek | `sioyek/prefs_user.config` (barebone) |
@@ -83,7 +83,8 @@ config ls-files        # list all tracked files
 - **JetBrains on Wayland**: Needs `_JAVA_AWT_WM_NONREPARENTING=1` env var
 - **swaylock + disabled eDP-1**: Indicator ring may render offset when eDP-1 is disabled but still reported by Hyprland. Known swaylock bug with disabled outputs (swaywm/swaylock#380)
 - **NVIDIA HDMI Limited Range**: NVIDIA sends Limited Range (16-235) over HDMI on Wayland. No driver-level fix available. Set monitor OSD to Limited to match, or use DisplayPort for Full Range
-- **KVM suspend on switch**: KVM switch-away disconnects HDMI, logind sees lid closed + AC power + no display → suspends immediately. Fixed: `HandleLidSwitchExternalPower=ignore` in `/etc/systemd/logind.conf` (hypridle handles real-idle suspend)
+- **KVM suspend on switch**: KVM switch-away disconnects HDMI, logind sees lid closed + AC power + no display → suspends immediately. Fixed: `HandleLidSwitchExternalPower=ignore` in `/etc/systemd/logind.conf`
+- **No suspend on AC**: USB/xHCI controller fails to resume from S3 deep sleep (PCI error -19), killing the KVM connection. Suspend removed from hypridle — DPMS off handles power saving on AC
 
 ## Conventions
 
